@@ -1,0 +1,696 @@
+<mxfile host="draw.io" agent="Mozilla/5.0" version="24.7.17">
+  <diagram name="파이썬 뉴스 에이전트 클래스 다이어그램" id="python-news-agent-classes">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 제목 -->
+        <mxCell id="title" value="🐍 뉴스 에이전트 시스템 - 파이썬 클래스 다이어그램" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 데이터 모델 섹션 -->
+        <mxCell id="data-models-section" value="📊 데이터 모델 (Data Models)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="320" height="460" as="geometry" />
+        </mxCell>
+        
+        <!-- UserProfile 클래스 -->
+        <mxCell id="user-profile-class" value="UserProfile" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" vertex="1" parent="data-models-section">
+          <mxGeometry y="40" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="user-profile-attrs" value="- profile_id: str&#xa;- interests: List[NewsCategory]&#xa;- preferences: Dict[str, float]&#xa;- created_at: datetime&#xa;- updated_at: datetime&#xa;- is_default: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="user-profile-class">
+          <mxGeometry y="26" width="320" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="user-profile-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="user-profile-class">
+          <mxGeometry y="110" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="user-profile-methods" value="+ to_json(): str&#xa;+ from_json(json_str): UserProfile" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="user-profile-class">
+          <mxGeometry y="118" width="320" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- NewsData 클래스 -->
+        <mxCell id="news-data-class" value="NewsData" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" vertex="1" parent="data-models-section">
+          <mxGeometry y="190" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="news-data-attrs" value="- article_id: str&#xa;- title: str&#xa;- content: str&#xa;- category: NewsCategory&#xa;- source: str&#xa;- published_at: datetime&#xa;- url: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-data-class">
+          <mxGeometry y="26" width="320" height="94" as="geometry" />
+        </mxCell>
+
+        <!-- NewsSummary 클래스 -->
+        <mxCell id="news-summary-class" value="NewsSummary" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" vertex="1" parent="data-models-section">
+          <mxGeometry y="320" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="news-summary-attrs" value="- summary_id: str&#xa;- original_news: List[NewsData]&#xa;- summary_text: str&#xa;- user_profile_id: str&#xa;- created_at: datetime&#xa;- expires_at: datetime&#xa;- verified: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-summary-class">
+          <mxGeometry y="26" width="320" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="news-summary-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="news-summary-class">
+          <mxGeometry y="110" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="news-summary-methods" value="+ is_valid(): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-summary-class">
+          <mxGeometry y="118" width="320" height="12" as="geometry" />
+        </mxCell>
+
+        <!-- 외부 인터페이스 섹션 -->
+        <mxCell id="external-interfaces-section" value="🌐 외부 인터페이스 (External Interfaces)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="100" width="320" height="460" as="geometry" />
+        </mxCell>
+
+        <!-- APIInterface 추상 클래스 -->
+        <mxCell id="api-interface-class" value="«abstract»&#xa;APIInterface" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;" vertex="1" parent="external-interfaces-section">
+          <mxGeometry y="40" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="api-interface-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="api-interface-class">
+          <mxGeometry y="40" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="api-interface-methods" value="+ call_api(params: Dict): Dict&#xa;+ is_available(): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontStyle=2;" vertex="1" parent="api-interface-class">
+          <mxGeometry y="48" width="320" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- NewsAPIInterface 클래스 -->
+        <mxCell id="news-api-interface-class" value="NewsAPIInterface" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="external-interfaces-section">
+          <mxGeometry y="130" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="news-api-attrs" value="- api_key: str&#xa;- base_url: str&#xa;- rate_limit: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-api-interface-class">
+          <mxGeometry y="26" width="320" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="news-api-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="news-api-interface-class">
+          <mxGeometry y="70" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="news-api-methods" value="+ fetch_latest_news(): List[NewsData]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-api-interface-class">
+          <mxGeometry y="78" width="320" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- OpenAIInterface 클래스 -->
+        <mxCell id="openai-interface-class" value="OpenAIInterface" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="external-interfaces-section">
+          <mxGeometry y="240" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="openai-attrs" value="- api_key: str&#xa;- model: str&#xa;- token_limit: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="openai-interface-class">
+          <mxGeometry y="26" width="320" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="openai-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="openai-interface-class">
+          <mxGeometry y="70" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="openai-methods" value="+ summarize_news(): str&#xa;+ verify_summary(): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="openai-interface-class">
+          <mxGeometry y="78" width="320" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- CloudStorageInterface 클래스 -->
+        <mxCell id="cloud-storage-class" value="CloudStorageInterface" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="external-interfaces-section">
+          <mxGeometry y="360" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud-storage-attrs" value="- storage_config: Dict" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="cloud-storage-class">
+          <mxGeometry y="26" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud-storage-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="cloud-storage-class">
+          <mxGeometry y="50" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud-storage-methods" value="+ save_profile(): bool&#xa;+ load_profile(): UserProfile" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="cloud-storage-class">
+          <mxGeometry y="58" width="320" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- 시스템 모듈 섹션 -->
+        <mxCell id="system-module-section" value="⚙️ 시스템 모듈 (System Module)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="100" width="320" height="460" as="geometry" />
+        </mxCell>
+
+        <!-- CookieDataAnalyzer 클래스 -->
+        <mxCell id="cookie-analyzer-class" value="CookieDataAnalyzer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;rounded=1;" vertex="1" parent="system-module-section">
+          <mxGeometry y="40" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cookie-analyzer-attrs" value="- min_categories: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="cookie-analyzer-class">
+          <mxGeometry y="26" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="cookie-analyzer-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="cookie-analyzer-class">
+          <mxGeometry y="50" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cookie-analyzer-methods" value="+ analyze_cookie_data(): Dict&#xa;+ extract_interests(): List[NewsCategory]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="cookie-analyzer-class">
+          <mxGeometry y="58" width="320" height="42" as="geometry" />
+        </mxCell>
+
+        <!-- ProfileManager 클래스 -->
+        <mxCell id="profile-manager-class" value="ProfileManager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;rounded=1;" vertex="1" parent="system-module-section">
+          <mxGeometry y="150" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-manager-attrs" value="- storage: CloudStorageInterface&#xa;- analyzer: CookieDataAnalyzer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="profile-manager-class">
+          <mxGeometry y="26" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-manager-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="profile-manager-class">
+          <mxGeometry y="60" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="profile-manager-methods" value="+ check_profile_exists(): bool&#xa;+ create_personalized_profile(): UserProfile&#xa;+ create_default_profile(): UserProfile&#xa;+ update_profile_if_needed(): UserProfile" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="profile-manager-class">
+          <mxGeometry y="68" width="320" height="72" as="geometry" />
+        </mxCell>
+
+        <!-- SystemModule 클래스 -->
+        <mxCell id="system-module-class" value="SystemModule" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;rounded=1;" vertex="1" parent="system-module-section">
+          <mxGeometry y="300" width="320" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="system-module-attrs" value="- profile_manager: ProfileManager&#xa;- storage: CloudStorageInterface" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="system-module-class">
+          <mxGeometry y="26" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="system-module-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="system-module-class">
+          <mxGeometry y="60" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="system-module-methods" value="+ access_cookie_data(): Optional[Dict]&#xa;+ get_or_create_profile(): UserProfile" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="system-module-class">
+          <mxGeometry y="68" width="320" height="82" as="geometry" />
+        </mxCell>
+
+        <!-- 뉴스 분석 모듈 섹션 -->
+        <mxCell id="news-analysis-section" value="📊 뉴스 분석 모듈 (News Analysis Module)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="100" width="320" height="460" as="geometry" />
+        </mxCell>
+
+        <!-- NewsCrawler 클래스 -->
+        <mxCell id="news-crawler-class" value="NewsCrawler" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e6f3ff;strokeColor=#4d94ff;rounded=1;" vertex="1" parent="news-analysis-section">
+          <mxGeometry y="40" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="news-crawler-attrs" value="- news_api: NewsAPIInterface&#xa;- min_sources: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-crawler-class">
+          <mxGeometry y="26" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="news-crawler-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="news-crawler-class">
+          <mxGeometry y="60" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="news-crawler-methods" value="+ crawl_news_data(): List[NewsData]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-crawler-class">
+          <mxGeometry y="68" width="320" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- NewsAnalyzer 클래스 -->
+        <mxCell id="news-analyzer-class" value="NewsAnalyzer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e6f3ff;strokeColor=#4d94ff;rounded=1;" vertex="1" parent="news-analysis-section">
+          <mxGeometry y="150" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="news-analyzer-attrs" value="- openai_api: OpenAIInterface" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-analyzer-class">
+          <mxGeometry y="26" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="news-analyzer-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="news-analyzer-class">
+          <mxGeometry y="50" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="news-analyzer-methods" value="+ summarize_with_profile(): str&#xa;+ verify_and_requery(): str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-analyzer-class">
+          <mxGeometry y="58" width="320" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- SummaryCache 클래스 -->
+        <mxCell id="summary-cache-class" value="SummaryCache" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e6f3ff;strokeColor=#4d94ff;rounded=1;" vertex="1" parent="news-analysis-section">
+          <mxGeometry y="270" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="summary-cache-attrs" value="- cache: Dict[str, NewsSummary]&#xa;- validity_hours: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="summary-cache-class">
+          <mxGeometry y="26" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="summary-cache-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="summary-cache-class">
+          <mxGeometry y="60" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="summary-cache-methods" value="+ get_valid_summary(): Optional[NewsSummary]&#xa;+ save_summary(): void&#xa;+ invalidate_expired(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="summary-cache-class">
+          <mxGeometry y="68" width="320" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- NewsAnalysisModule 클래스 -->
+        <mxCell id="news-analysis-module-class" value="NewsAnalysisModule" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e6f3ff;strokeColor=#4d94ff;rounded=1;" vertex="1" parent="news-analysis-section">
+          <mxGeometry y="400" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="news-analysis-module-methods" value="+ generate_news_summary(): NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-analysis-module-class">
+          <mxGeometry y="26" width="320" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- 인터페이스 모듈 섹션 -->
+        <mxCell id="interface-module-section" value="📱 인터페이스 모듈 (Interface Module)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d4e1f5;strokeColor=#4472c4;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="520" height="460" as="geometry" />
+        </mxCell>
+
+        <!-- DeviceRenderer 추상 클래스 -->
+        <mxCell id="device-renderer-class" value="«abstract»&#xa;DeviceRenderer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;" vertex="1" parent="interface-module-section">
+          <mxGeometry y="40" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="device-renderer-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="device-renderer-class">
+          <mxGeometry y="40" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="device-renderer-methods" value="+ render(): str&#xa;+ check_compatibility(): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontStyle=2;" vertex="1" parent="device-renderer-class">
+          <mxGeometry y="48" width="240" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- SmartphoneRenderer 클래스 -->
+        <mxCell id="smartphone-renderer-class" value="SmartphoneRenderer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#01579b;rounded=1;" vertex="1" parent="interface-module-section">
+          <mxGeometry y="130" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="smartphone-renderer-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="smartphone-renderer-class">
+          <mxGeometry y="26" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="smartphone-renderer-methods" value="+ render(): str&#xa;+ show_widget(): str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="smartphone-renderer-class">
+          <mxGeometry y="34" width="160" height="46" as="geometry" />
+        </mxCell>
+
+        <!-- TabletRenderer 클래스 -->
+        <mxCell id="tablet-renderer-class" value="TabletRenderer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#01579b;rounded=1;" vertex="1" parent="interface-module-section">
+          <mxGeometry x="180" y="130" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tablet-renderer-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="tablet-renderer-class">
+          <mxGeometry y="26" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="tablet-renderer-methods" value="+ render(): str&#xa;+ show_widget(): str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="tablet-renderer-class">
+          <mxGeometry y="34" width="160" height="46" as="geometry" />
+        </mxCell>
+
+        <!-- PCRenderer 클래스 -->
+        <mxCell id="pc-renderer-class" value="PCRenderer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#01579b;rounded=1;" vertex="1" parent="interface-module-section">
+          <mxGeometry x="360" y="130" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pc-renderer-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="pc-renderer-class">
+          <mxGeometry y="26" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pc-renderer-methods" value="+ render(): str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="pc-renderer-class">
+          <mxGeometry y="34" width="160" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- InterfaceModule 클래스 -->
+        <mxCell id="interface-module-class" value="InterfaceModule" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#01579b;rounded=1;" vertex="1" parent="interface-module-section">
+          <mxGeometry y="230" width="520" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-module-attrs" value="- renderers: Dict[DeviceType, DeviceRenderer]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="interface-module-class">
+          <mxGeometry y="26" width="520" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-module-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="interface-module-class">
+          <mxGeometry y="50" width="520" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-module-methods" value="+ detect_device_type(user_agent: str): DeviceType&#xa;+ render_for_device(summary: NewsSummary, device_type: DeviceType): str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="interface-module-class">
+          <mxGeometry y="58" width="520" height="62" as="geometry" />
+        </mxCell>
+
+        <!-- 메인 모듈 섹션 -->
+        <mxCell id="main-module-section" value="🎯 메인 모듈 (Main Module)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffd6d6;strokeColor=#d63384;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="620" width="520" height="280" as="geometry" />
+        </mxCell>
+
+        <!-- NewsAgentMain 클래스 -->
+        <mxCell id="news-agent-main-class" value="NewsAgentMain" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#cc0000;rounded=1;" vertex="1" parent="main-module-section">
+          <mxGeometry y="40" width="520" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="news-agent-main-attrs" value="- system_module: SystemModule&#xa;- analysis_module: NewsAnalysisModule&#xa;- interface_module: InterfaceModule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-agent-main-class">
+          <mxGeometry y="26" width="520" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="news-agent-main-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="news-agent-main-class">
+          <mxGeometry y="80" width="520" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="news-agent-main-methods" value="+ start_application(): bool&#xa;+ check_user_profile(user_id: str): bool&#xa;+ request_cookie_permission(user_id: str): bool&#xa;+ coordinate_system_module(): UserProfile&#xa;+ coordinate_analysis_module(): NewsSummary&#xa;+ send_to_interface(): str&#xa;+ process_user_request(user_id: str, user_agent: str): str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-agent-main-class">
+          <mxGeometry y="88" width="520" height="142" as="geometry" />
+        </mxCell>
+
+        <!-- 유틸리티 클래스 섹션 -->
+        <mxCell id="utility-section" value="🔧 유틸리티 및 설정 클래스" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="620" width="320" height="460" as="geometry" />
+        </mxCell>
+
+        <!-- SystemConfig 클래스 -->
+        <mxCell id="system-config-class" value="SystemConfig" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;" vertex="1" parent="utility-section">
+          <mxGeometry y="40" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="system-config-attrs" value="- performance_config: Dict&#xa;- quality_config: Dict&#xa;- cache_config: Dict&#xa;- browser_compatibility: List[str]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="system-config-class">
+          <mxGeometry y="26" width="320" height="54" as="geometry" />
+        </mxCell>
+
+        <!-- ErrorHandler 클래스 -->
+        <mxCell id="error-handler-class" value="ErrorHandler" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;" vertex="1" parent="utility-section">
+          <mxGeometry y="130" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="error-handler-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="error-handler-class">
+          <mxGeometry y="26" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="error-handler-methods" value="+ handle_api_error(): str&#xa;+ handle_network_error(): str&#xa;+ handle_data_error(): str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="error-handler-class">
+          <mxGeometry y="34" width="320" height="56" as="geometry" />
+        </mxCell>
+
+        <!-- Logger 클래스 -->
+        <mxCell id="logger-class" value="Logger" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;" vertex="1" parent="utility-section">
+          <mxGeometry y="230" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="logger-attrs" value="- log_level: str&#xa;- retention_days: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="logger-class">
+          <mxGeometry y="26" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="logger-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="logger-class">
+          <mxGeometry y="60" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="logger-methods" value="+ log_info(): void&#xa;+ log_warning(): void&#xa;+ log_error(): void&#xa;+ log_user_action(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="logger-class">
+          <mxGeometry y="68" width="320" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- PerformanceMonitor 클래스 -->
+        <mxCell id="performance-monitor-class" value="PerformanceMonitor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="utility-section">
+          <mxGeometry y="360" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="performance-monitor-attrs" value="- response_times: List&#xa;- error_counts: Dict" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="performance-monitor-class">
+          <mxGeometry y="26" width="320" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="performance-monitor-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="performance-monitor-class">
+          <mxGeometry y="60" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="performance-monitor-methods" value="+ record_response_time(): void&#xa;+ check_performance_targets(): Dict" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="performance-monitor-class">
+          <mxGeometry y="68" width="320" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- 관계 연결선들 -->
+        
+        <!-- API 상속 관계 -->
+        <mxCell id="news-api-inheritance" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#d79b00;" edge="1" parent="1" source="news-api-interface-class" target="api-interface-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="540" y="300" as="sourcePoint" />
+            <mxPoint x="540" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="openai-api-inheritance" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#d79b00;" edge="1" parent="1" source="openai-interface-class" target="api-interface-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="620" y="300" as="sourcePoint" />
+            <mxPoint x="620" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="cloud-storage-inheritance" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#d79b00;" edge="1" parent="1" source="cloud-storage-class" target="api-interface-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="700" y="300" as="sourcePoint" />
+            <mxPoint x="700" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- DeviceRenderer 상속 관계 -->
+        <mxCell id="smartphone-inheritance" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#4472c4;" edge="1" parent="1" source="smartphone-renderer-class" target="device-renderer-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="160" y="780" as="sourcePoint" />
+            <mxPoint x="160" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="tablet-inheritance" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#4472c4;" edge="1" parent="1" source="tablet-renderer-class" target="device-renderer-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="260" y="780" as="sourcePoint" />
+            <mxPoint x="200" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="pc-inheritance" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#4472c4;" edge="1" parent="1" source="pc-renderer-class" target="device-renderer-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="440" y="780" as="sourcePoint" />
+            <mxPoint x="240" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 컴포지션 관계들 -->
+        <mxCell id="main-to-system-composition" style="endArrow=diamond;endFill=1;endSize=12;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#cc0000;" edge="1" parent="1" source="news-agent-main-class" target="system-module-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="660" y="760" as="sourcePoint" />
+            <mxPoint x="1160" y="760" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="600" y="775" />
+              <mxPoint x="600" y="525" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-to-system-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="main-to-system-composition">
+          <mxGeometry x="0.8" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="main-to-analysis-composition" style="endArrow=diamond;endFill=1;endSize=12;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#cc0000;" edge="1" parent="1" source="news-agent-main-class" target="news-analysis-module-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1180" y="720" as="sourcePoint" />
+            <mxPoint x="1220" y="540" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1200" y="718" />
+              <mxPoint x="1200" y="535" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-to-analysis-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="main-to-analysis-composition">
+          <mxGeometry x="0.8" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="main-to-interface-composition" style="endArrow=diamond;endFill=1;endSize=12;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#cc0000;" edge="1" parent="1" source="news-agent-main-class" target="interface-module-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="660" y="830" as="sourcePoint" />
+            <mxPoint x="600" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-to-interface-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="main-to-interface-composition">
+          <mxGeometry x="0.8" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 시스템 모듈 내부 관계 -->
+        <mxCell id="system-to-profile-manager" style="endArrow=diamond;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#d79b00;" edge="1" parent="1" source="system-module-class" target="profile-manager-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1000" y="400" as="sourcePoint" />
+            <mxPoint x="1000" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="profile-manager-to-analyzer" style="endArrow=diamond;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#d79b00;" edge="1" parent="1" source="profile-manager-class" target="cookie-analyzer-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1000" y="250" as="sourcePoint" />
+            <mxPoint x="1000" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 뉴스 분석 모듈 내부 관계 -->
+        <mxCell id="analysis-to-crawler" style="endArrow=diamond;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="news-analysis-module-class" target="news-crawler-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1380" y="520" as="sourcePoint" />
+            <mxPoint x="1380" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="analysis-to-analyzer" style="endArrow=diamond;endFill=1;endSize=12;html=1;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="news-analysis-module-class" target="news-analyzer-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1350" y="520" as="sourcePoint" />
+            <mxPoint x="1380" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="analysis-to-cache" style="endArrow=diamond;endFill=1;endSize=12;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="news-analysis-module-class" target="summary-cache-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1460" y="520" as="sourcePoint" />
+            <mxPoint x="1380" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- API 의존성 관계 -->
+        <mxCell id="crawler-to-news-api" style="endArrow=open;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#82b366;dashed=1;" edge="1" parent="1" source="news-crawler-class" target="news-api-interface-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1220" y="190" as="sourcePoint" />
+            <mxPoint x="780" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1180" y="190" />
+              <mxPoint x="1180" y="100" />
+              <mxPoint x="820" y="100" />
+              <mxPoint x="820" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="crawler-to-news-api-label" value="uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="crawler-to-news-api">
+          <mxGeometry x="0.5" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="analyzer-to-openai-api" style="endArrow=open;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#82b366;dashed=1;" edge="1" parent="1" source="news-analyzer-class" target="openai-interface-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1220" y="280" as="sourcePoint" />
+            <mxPoint x="780" y="390" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1180" y="280" />
+              <mxPoint x="1180" y="80" />
+              <mxPoint x="840" y="80" />
+              <mxPoint x="840" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="analyzer-to-openai-api-label" value="uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="analyzer-to-openai-api">
+          <mxGeometry x="0.5" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 데이터 흐름 관계 -->
+        <mxCell id="profile-manager-to-storage" style="endArrow=open;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#9673a6;dashed=1;" edge="1" parent="1" source="profile-manager-class" target="cloud-storage-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="840" y="390" as="sourcePoint" />
+            <mxPoint x="780" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="800" y="390" />
+              <mxPoint x="800" y="483" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="profile-manager-to-storage-label" value="saves/loads" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="profile-manager-to-storage">
+          <mxGeometry x="0.5" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 인터페이스 관계 -->
+        <mxCell id="interface-to-renderers" style="endArrow=diamond;endFill=0;endSize=12;html=1;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#01579b;" edge="1" parent="1" source="interface-module-class" target="device-renderer-class">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="210" y="850" as="sourcePoint" />
+            <mxPoint x="200" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="interface-to-renderers-label" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="interface-to-renderers">
+          <mxGeometry x="0.8" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 팩토리 패턴 섹션 -->
+        <mxCell id="factory-section" value="🏭 팩토리 패턴 (Factory Pattern)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e8f4fd;strokeColor=#1565c0;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1140" width="1460" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- APIFactory 클래스 -->
+        <mxCell id="api-factory-class" value="APIFactory" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;rounded=1;" vertex="1" parent="factory-section">
+          <mxGeometry y="40" width="480" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="api-factory-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="api-factory-class">
+          <mxGeometry y="26" width="480" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="api-factory-methods" value="+ create_news_api(config: Dict): NewsAPIInterface&#xa;+ create_openai_api(config: Dict): OpenAIInterface&#xa;+ create_storage_api(config: Dict): CloudStorageInterface" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontStyle=1;" vertex="1" parent="api-factory-class">
+          <mxGeometry y="34" width="480" height="96" as="geometry" />
+        </mxCell>
+
+        <!-- NewsAgentFactory 클래스 -->
+        <mxCell id="news-agent-factory-class" value="NewsAgentFactory" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;rounded=1;" vertex="1" parent="factory-section">
+          <mxGeometry x="500" width="480" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="news-agent-factory-line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="news-agent-factory-class">
+          <mxGeometry y="26" width="480" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="news-agent-factory-methods" value="+ create_news_agent(config: Dict): NewsAgentMain" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontStyle=1;" vertex="1" parent="news-agent-factory-class">
+          <mxGeometry y="34" width="480" height="96" as="geometry" />
+        </mxCell>
+
+        <!-- 열거형 섹션 -->
+        <mxCell id="enums-section" value="📋 열거형 (Enums)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#ff8f00;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1380" width="520" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- DeviceType 열거형 -->
+        <mxCell id="device-type-enum" value="«enumeration»&#xa;DeviceType" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#f57c00;rounded=1;" vertex="1" parent="enums-section">
+          <mxGeometry y="40" width="240" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="device-type-values" value="SMARTPHONE = &quot;smartphone&quot;&#xa;TABLET = &quot;tablet&quot;&#xa;PC = &quot;pc&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="device-type-enum">
+          <mxGeometry y="40" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- NewsCategory 열거형 -->
+        <mxCell id="news-category-enum" value="«enumeration»&#xa;NewsCategory" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#f57c00;rounded=1;" vertex="1" parent="enums-section">
+          <mxGeometry x="260" y="40" width="240" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="news-category-values" value="POLITICS = &quot;정치&quot;&#xa;ECONOMY = &quot;경제&quot;&#xa;SOCIETY = &quot;사회&quot;&#xa;CULTURE = &quot;문화&quot;&#xa;SPORTS = &quot;스포츠&quot;&#xa;TECHNOLOGY = &quot;과학기술&quot;&#xa;INTERNATIONAL = &quot;국제&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="news-category-enum">
+          <mxGeometry y="40" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- 범례 -->
+        <mxCell id="legend-section" value="📖 범례 (Legend)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="1380" width="880" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-inheritance" value="━━▷ 상속 관계 (Inheritance)" style="text;html=1;strokeColor=#d79b00;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;strokeWidth=2;" vertex="1" parent="legend-section">
+          <mxGeometry y="40" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-composition" value="━━◆ 컴포지션 관계 (Composition)" style="text;html=1;strokeColor=#cc0000;fillColor=#ffe6e6;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;strokeWidth=2;" vertex="1" parent="legend-section">
+          <mxGeometry x="220" y="40" width="220" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-aggregation" value="━━◇ 집합 관계 (Aggregation)" style="text;html=1;strokeColor=#01579b;fillColor=#e1f5fe;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;strokeWidth=2;" vertex="1" parent="legend-section">
+          <mxGeometry x="460" y="40" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-dependency" value="┅┅▷ 의존 관계 (Dependency)" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;strokeWidth=2;strokeDashArray=8 8;" vertex="1" parent="legend-section">
+          <mxGeometry x="680" y="40" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-abstract" value="«abstract» 추상 클래스" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="legend-section">
+          <mxGeometry y="75" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-enum" value="«enumeration» 열거형" style="text;html=1;strokeColor=#f57c00;fillColor=#ffe0b2;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="legend-section">
+          <mxGeometry x="220" y="75" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-dataclass" value="@dataclass 데이터 클래스" style="text;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="legend-section">
+          <mxGeometry x="460" y="75" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-static" value="static method 정적 메서드" style="text;html=1;strokeColor=#1976d2;fillColor=#e3f2fd;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="legend-section">
+          <mxGeometry x="680" y="75" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-colors-title" value="📌 모듈별 색상 구분:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="legend-section">
+          <mxGeometry y="110" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-data-color" value="데이터 모델" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1;" vertex="1" parent="legend-section">
+          <mxGeometry y="140" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-external-color" value="외부 인터페이스" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1;" vertex="1" parent="legend-section">
+          <mxGeometry x="110" y="140" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-system-color" value="시스템 모듈" style="text;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1;" vertex="1" parent="legend-section">
+          <mxGeometry x="220" y="140" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-analysis-color" value="뉴스 분석 모듈" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1;" vertex="1" parent="legend-section">
+          <mxGeometry x="330" y="140" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-interface-color" value="인터페이스 모듈" style="text;html=1;strokeColor=#4472c4;fillColor=#d4e1f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1;" vertex="1" parent="legend-section">
+          <mxGeometry x="440" y="140" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-main-color" value="메인 모듈" style="text;html=1;strokeColor=#d63384;fillColor=#ffd6d6;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1;" vertex="1" parent="legend-section">
+          <mxGeometry x="550" y="140" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-utility-color" value="유틸리티" style="text;html=1;strokeColor=#666666;fillColor=#f0f0f0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1;" vertex="1" parent="legend-section">
+          <mxGeometry x="660" y="140" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-factory-color" value="팩토리 패턴" style="text;html=1;strokeColor=#1565c0;fillColor=#e8f4fd;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1;" vertex="1" parent="legend-section">
+          <mxGeometry x="770" y="140" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 추가 노트 섹션 -->
+        <mxCell id="notes-section" value="📝 설계 노트 (Design Notes)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#dee2e6;fontSize=16;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1620" width="1460" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="design-principles" value="🎯 설계 원칙:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="notes-section">
+          <mxGeometry y="40" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="solid-principles" value="• SOLID 원칙 적용으로 각 클래스의 책임 명확화&#xa;• 의존성 주입(Dependency Injection) 패턴으로 테스트 용이성 향상&#xa;• 팩토리 패턴(Factory Pattern)으로 객체 생성 관리 및 확장성 확보&#xa;• 전략 패턴(Strategy Pattern)으로 디바이스별 렌더링 분리&#xa;• 캐시 패턴으로 API 호출 최적화 및 성능 향상" style="text;strokeColor=none;fillColor=#e8f5e8;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="notes-section">
+          <mxGeometry y="70" width="720" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="implementation-notes" value="⚙️ 구현 특징:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="notes-section">
+          <mxGeometry x="740" y="40" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="implementation-features" value="• 비동기 처리(async/await)로 성능 최적화&#xa;• 타입 힌트(Type Hints) 활용으로 코드 안정성 향상&#xa;• 데이터클래스(@dataclass) 사용으로 코드 간소화&#xa;• 열거형(Enum) 활용으로 상수 관리 체계화&#xa;• 에러 핸들링 및 로깅 체계 구축" style="text;strokeColor=none;fillColor=#fff0e8;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="notes-section">
+          <mxGeometry x="740" y="70" width="720" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="requirements-mapping" value="📋 요구사항 매핑:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="notes-section">
+          <mxGeometry y="160" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mapping-details" value="SRS_FUN_001~003: NewsAgentMain 클래스 | SRS_FUN_004~007: SystemModule 클래스 | SRS_FUN_008~012: NewsAnalysisModule 클래스 | SRS_FUN_013~014: API 인터페이스들 | SRS_FUN_015: InterfaceModule 클래스" style="text;strokeColor=none;fillColor=#e8f0ff;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="notes-section">
+          <mxGeometry y="185" width="1460" height="15" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
