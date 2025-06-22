@@ -1,0 +1,38 @@
+flowchart TB
+    %% 액터 정의
+    User["일반 사용자"]
+    OpenAI["OpenAI API"]
+    NewsAPI["뉴스 API"]
+
+    %% 시스템 경계
+    subgraph SystemBoundary ["AI 뉴스 에이전트 시스템"]
+        UC001["UC-001\n개인화 뉴스 요약 조회"]
+        UC002["UC-002\nAI 뉴스 요약 생성"]
+        UC003["UC-003\nAI 재질의 검증"]
+        UC004["UC-004\n프로파일 관리"]
+        UC007["UC-007\n반응형 UI 출력"]
+    end
+
+    %% 사용자 액션
+    User --> UC001
+    User --> UC004
+    User --> UC007
+
+    %% 내부 유스케이스 흐름
+    UC001 --> UC002
+    UC002 --> UC003
+    UC001 --> UC004
+
+    %% 외부 API 연동
+    UC001 --> NewsAPI
+    UC002 --> OpenAI
+    UC003 --> OpenAI
+
+    %% 스타일 지정 (안전하게 최소화)
+    classDef actor fill:#e3f2fd,stroke:#1976d2,color:#000
+    classDef usecase fill:#f1f8e9,stroke:#388e3c,color:#000
+    classDef external fill:#fff8e1,stroke:#f57c00,color:#000
+
+    class User actor
+    class NewsAPI,OpenAI external
+    class UC001,UC002,UC003,UC004,UC007 usecase
