@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="사용자 프로파일 생성">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="u1" value="사용자" style="shape=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="30" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="b1" value="웹 브라우저" style="shape=swimlane;" vertex="1" parent="1">
+          <mxGeometry x="100" y="20" width="120" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="f1" value="FastAPI 서버" style="shape=swimlane;" vertex="1" parent="1">
+          <mxGeometry x="230" y="20" width="120" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="d1" value="JSON 저장소" style="shape=database;" vertex="1" parent="1">
+          <mxGeometry x="360" y="60" width="80" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow1" style="endArrow=block;" edge="1" parent="1" source="u1" target="b1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow2" style="endArrow=block;" edge="1" parent="1" source="b1" target="f1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow3" style="endArrow=block;" edge="1" parent="1" source="f1" target="d1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

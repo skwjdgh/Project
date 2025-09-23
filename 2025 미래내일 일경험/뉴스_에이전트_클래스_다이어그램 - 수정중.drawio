@@ -1,0 +1,354 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="27.1.6">
+  <diagram name="뉴스 에이전트 시스템" id="news-agent-system">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 제목 -->
+        <mxCell id="title" value="📰 뉴스 에이전트 시스템 클래스 다이어그램" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="1">
+          <mxGeometry x="500" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 메인 모듈 (중앙) -->
+        <mxCell id="main-module" value="🎯 NewsAgentMain" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="100" width="300" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="main-1" value="▶ startApplication()&#10;   → 애플리케이션 시작" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;strokeWidth=1;" vertex="1" parent="main-module">
+          <mxGeometry y="40" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="main-2" value="▶ checkUserProfile()&#10;   → 사용자 프로파일 확인" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="main-module">
+          <mxGeometry y="70" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="main-3" value="▶ requestCookiePermission()&#10;   → 쿠키 사용 권한 요청" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="main-module">
+          <mxGeometry y="100" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="main-4" value="◀ validatePermission()&#10;   ← 사용자 승인/거부 응답" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="main-module">
+          <mxGeometry y="130" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="main-5" value="↔ coordinateSystemModule()&#10;   ↔ 시스템 모듈과 연동" style="text;strokeColor=none;fillColor=#dae8fc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="main-module">
+          <mxGeometry y="160" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="main-6" value="↔ coordinateAnalysisModule()&#10;   ↔ 뉴스 분석 모듈과 연동" style="text;strokeColor=none;fillColor=#dae8fc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="main-module">
+          <mxGeometry y="190" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="main-7" value="◀ generateNewsOutput()&#10;   ← 요약된 뉴스 데이터 수신" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="main-module">
+          <mxGeometry y="220" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="main-8" value="▶ sendToInterface()&#10;   → 인터페이스로 최종 출력 전달" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="main-module">
+          <mxGeometry y="250" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="main-9" value="▶ accessExternalAPI()&#10;   → 외부 API 접근 관리" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="main-module">
+          <mxGeometry y="280" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="main-10" value="▶ refreshNewsSummary()&#10;   → 뉴스 요약 갱신 (SRS_FUN_012)" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="main-module">
+          <mxGeometry y="310" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 시스템 모듈 (왼쪽) -->
+        <mxCell id="system-module" value="⚙️ SystemModule" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="320" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="system-1" value="◀ accessCookieData()&#10;   ← 쿠키 데이터 접근" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="system-module">
+          <mxGeometry y="40" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="system-2" value="▶ checkCookieExists()&#10;   → 쿠키 데이터 존재 여부 확인" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="system-module">
+          <mxGeometry y="70" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="system-3" value="▶ analyzeCookieData()&#10;   → 쿠키 데이터 분석 처리" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="system-module">
+          <mxGeometry y="100" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="system-4" value="▶ createPersonalizedProfile()&#10;   → 개인화된 사용자 프로파일 생성" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="system-module">
+          <mxGeometry y="130" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="system-5" value="▶ createDefaultProfile()&#10;   → 기본 사용자 프로파일 생성" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="system-module">
+          <mxGeometry y="160" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="system-6" value="▶ accessUserProfile()&#10;   → 사용자 프로파일 접근 관리" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="system-module">
+          <mxGeometry y="190" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="system-7" value="▶ checkWeeklyUpdate()&#10;   → 1주일 경과 여부 확인" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="system-module">
+          <mxGeometry y="220" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="system-8" value="↔ manageCloudStorage()&#10;   ↔ 클라우드 사용자 파일 관리" style="text;strokeColor=none;fillColor=#dae8fc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="system-module">
+          <mxGeometry y="250" width="320" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 뉴스 분석 모듈 (오른쪽) -->
+        <mxCell id="analysis-module" value="📊 NewsAnalysisModule" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="480" width="320" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-1" value="▶ callExternalAPI()&#10;   → 외부 API 호출 (AI, 뉴스 API)" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="analysis-module">
+          <mxGeometry y="40" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-2" value="◀ crawlNewsData()&#10;   ← 뉴스 데이터 크롤링 및 수집" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="analysis-module">
+          <mxGeometry y="70" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-3" value="▶ callAI()&#10;   → AI 모델 호출" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="analysis-module">
+          <mxGeometry y="100" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-4" value="◀ summarizeNewsWithProfile()&#10;   ← 사용자 프로파일 기반 뉴스 요약" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="analysis-module">
+          <mxGeometry y="130" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-5" value="▶ requery()&#10;   → 요약 결과 기반 재질의" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="analysis-module">
+          <mxGeometry y="160" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-6" value="▶ generateFinalSummary()&#10;   → 최종 뉴스 데이터 요약본 생성" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="analysis-module">
+          <mxGeometry y="190" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-7" value="◀ receiveUserProfile()&#10;   ← 시스템 모듈로부터 사용자 파일 수신" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="analysis-module">
+          <mxGeometry y="220" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-8" value="▶ checkSummaryExpiry()&#10;   → 요약본 유효 시간 확인 (SRS_FUN_012)" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="analysis-module">
+          <mxGeometry y="250" width="320" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 외부 API 모듈 (오른쪽 아래) -->
+        <mxCell id="api-module" value="🌐 ExternalAPIModule" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="800" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="api-1" value="↔ accessCloudStorage()&#10;   ↔ 클라우드 스토리지 (사용자 파일)" style="text;strokeColor=none;fillColor=#dae8fc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="api-module">
+          <mxGeometry y="40" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="api-2" value="◀ accessNewsAPI()&#10;   ← 뉴스 API 데이터 수신" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="api-module">
+          <mxGeometry y="70" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="api-3" value="↔ accessOpenAI()&#10;   ↔ OpenAI API 통신" style="text;strokeColor=none;fillColor=#dae8fc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="api-module">
+          <mxGeometry y="100" width="320" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 인터페이스 모듈 (중앙 아래) -->
+        <mxCell id="interface-module" value="📱 InterfaceModule" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="800" width="300" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-1" value="◀ receiveNewsData()&#10;   ← 메인 모듈로부터 뉴스 데이터 수신" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="interface-module">
+          <mxGeometry y="40" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-2" value="▶ displayOnSmartphone()&#10;   → 스마트폰 화면 출력" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="interface-module">
+          <mxGeometry y="70" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-3" value="▶ displayOnTablet()&#10;   → 태블릿 화면 출력" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="interface-module">
+          <mxGeometry y="100" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-4" value="▶ displayOnPC()&#10;   → PC 화면 출력" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="interface-module">
+          <mxGeometry y="130" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 디바이스 클래스들 (하단) -->
+        <mxCell id="smartphone-class" value="📱 Smartphone" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1050" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="smartphone-1" value="◀ displayNews()&#10;   ← 뉴스 데이터 화면 표시" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="smartphone-class">
+          <mxGeometry y="40" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smartphone-2" value="▶ showWidget()&#10;   → 위젯 표시" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="smartphone-class">
+          <mxGeometry y="70" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="smartphone-3" value="▶ checkCompatibility()&#10;   → 호환성 확인" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="smartphone-class">
+          <mxGeometry y="100" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tablet-class" value="💻 Tablet" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1050" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="tablet-1" value="◀ displayNews()&#10;   ← 뉴스 데이터 화면 표시" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="tablet-class">
+          <mxGeometry y="40" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tablet-2" value="▶ showWidget()&#10;   → 위젯 표시" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="tablet-class">
+          <mxGeometry y="70" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tablet-3" value="▶ checkCompatibility()&#10;   → 호환성 확인" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="tablet-class">
+          <mxGeometry y="100" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pc-class" value="🖥️ PC" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1050" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="pc-1" value="◀ displayNews()&#10;   ← 뉴스 데이터 화면 표시" style="text;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="pc-class">
+          <mxGeometry y="40" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pc-2" value="▶ checkCompatibility()&#10;   → 호환성 확인" style="text;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;rounded=1;" vertex="1" parent="pc-class">
+          <mxGeometry y="70" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 연결선들 -->
+        
+        <!-- 메인 → 시스템 (양방향 연결) -->
+        <mxCell id="main-to-system" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#3498db;startArrow=diamond;startFill=1;endArrow=diamond;endFill=1;shadow=1;" edge="1" parent="1" source="main-5" target="system-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="275" />
+              <mxPoint x="550" y="685" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-to-system-label" value="🔄 사용자 프로파일&#10;데이터 교환" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fillColor=#ffffff;strokeColor=#cccccc;rounded=1;" vertex="1" connectable="0" parent="main-to-system">
+          <mxGeometry x="-0.15" y="5" relative="1" as="geometry">
+            <mxPoint x="10" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 메인 → 뉴스 분석 (양방향 연결) -->
+        <mxCell id="main-to-analysis" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#3498db;startArrow=diamond;startFill=1;endArrow=diamond;endFill=1;shadow=1;" edge="1" parent="1" source="main-6" target="analysis-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="305" />
+              <mxPoint x="1050" y="715" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-to-analysis-label" value="📊 뉴스 분석&#10;요청/응답" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fillColor=#ffffff;strokeColor=#cccccc;rounded=1;" vertex="1" connectable="0" parent="main-to-analysis">
+          <mxGeometry x="-0.1" y="3" relative="1" as="geometry">
+            <mxPoint x="-10" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 메인 → 인터페이스 (단방향 출력) -->
+        <mxCell id="main-to-interface" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=4;strokeColor=#e74c3c;endArrow=blockThin;endFill=1;shadow=1;" edge="1" parent="1" source="main-8" target="interface-module">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="main-to-interface-label" value="📰 최종 뉴스&#10;데이터 전송" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fillColor=#ffffff;strokeColor=#cccccc;rounded=1;" vertex="1" connectable="0" parent="main-to-interface">
+          <mxGeometry x="-0.2" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 시스템 → 뉴스 분석 (프로파일 전달) -->
+        <mxCell id="system-to-analysis" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#f39c12;endArrow=blockThin;endFill=1;strokeDashArray=8 8;shadow=1;" edge="1" parent="1" source="system-6" target="analysis-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="685" />
+              <mxPoint x="500" y="715" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="system-to-analysis-label" value="👤 사용자&#10;프로파일" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fillColor=#ffffff;strokeColor=#cccccc;rounded=1;" vertex="1" connectable="0" parent="system-to-analysis">
+          <mxGeometry x="0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 뉴스 분석 → 외부 API -->
+        <mxCell id="analysis-to-api" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#f39c12;endArrow=blockThin;endFill=1;strokeDashArray=8 8;shadow=1;" edge="1" parent="1" source="analysis-1" target="api-module">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-to-api-label" value="🌐 외부 API&#10;호출" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fillColor=#ffffff;strokeColor=#cccccc;rounded=1;" vertex="1" connectable="0" parent="analysis-to-api">
+          <mxGeometry x="-0.3" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 인터페이스 → 디바이스들 -->
+        <mxCell id="interface-to-smartphone" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#27ae60;endArrow=blockThin;endFill=1;shadow=1;" edge="1" parent="1" source="interface-2" target="smartphone-class">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="885" />
+              <mxPoint x="500" y="1000" />
+              <mxPoint x="180" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="interface-to-tablet" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#27ae60;endArrow=blockThin;endFill=1;shadow=1;" edge="1" parent="1" source="interface-3" target="tablet-class">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="1000" />
+              <mxPoint x="420" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="interface-to-pc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#27ae60;endArrow=blockThin;endFill=1;shadow=1;" edge="1" parent="1" source="interface-4" target="pc-class">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="945" />
+              <mxPoint x="1100" y="1000" />
+              <mxPoint x="660" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="device-output-label" value="📺 디바이스별 출력" style="text;html=1;strokeColor=#cccccc;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="1000" width="120" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 범례 박스 -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#dee2e6;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="80" width="320" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="📋 범례 (Legend)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="90" width="320" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- 색상 범례 -->
+        <mxCell id="legend-input" value="◀ 데이터 입력 방향" style="text;html=1;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="130" width="140" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-output" value="▶ 데이터 출력 방향" style="text;html=1;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="130" width="140" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-bidirectional" value="↔ 양방향 데이터 교환" style="text;html=1;strokeColor=none;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="165" width="140" height="25" as="geometry" />
+        </mxCell>
+        
+        <!-- 연결선 범례 -->
+        <mxCell id="legend-direct" value="━━ 직접 연결" style="text;html=1;strokeColor=#3498db;fillColor=#ffffff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="165" width="140" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-dependency" value="┅┅ 의존 관계" style="text;html=1;strokeColor=#f39c12;fillColor=#ffffff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;strokeWidth=2;strokeDashArray=8 8;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="200" width="140" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-output-line" value="──▶ 출력 흐름" style="text;html=1;strokeColor=#e74c3c;fillColor=#ffffff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="200" width="140" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 데이터 흐름 설명 박스 -->
+        <mxCell id="flow-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#dee2e6;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="400" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-title" value="🔄 시스템 데이터 흐름" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="1">
+          <mxGeometry x="80" y="90" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-step1" value="1️⃣ 접속 시작 → 사용자 파일 확인" style="text;html=1;strokeColor=none;fillColor=#e8f5e8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="90" y="130" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-step2" value="2️⃣ 쿠키 권한 요청 → 사용자 승인/거부" style="text;html=1;strokeColor=none;fillColor=#ffe8e8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="90" y="155" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-step3" value="3️⃣ 시스템 모듈에서 개인화 프로파일 생성" style="text;html=1;strokeColor=none;fillColor=#e8f0ff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="90" y="180" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-step4" value="4️⃣ 뉴스 분석 모듈에서 AI 기반 데이터 처리" style="text;html=1;strokeColor=none;fillColor=#fff8e8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="90" y="205" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-step5" value="5️⃣ 인터페이스를 통한 다중 디바이스 최종 출력" style="text;html=1;strokeColor=none;fillColor=#f0e8ff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="90" y="230" width="380" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 모듈 역할 설명 박스 -->
+        <mxCell id="modules-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#dee2e6;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="80" width="400" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="modules-title" value="🏗️ 주요 모듈 역할" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="1">
+          <mxGeometry x="500" y="90" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="modules-main" value="🎯 메인 모듈: 전체 시스템 흐름 제어 및 조정" style="text;html=1;strokeColor=none;fillColor=#e8e5ff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="510" y="130" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="modules-system" value="⚙️ 시스템 모듈: 사용자 데이터 및 프로파일 관리" style="text;html=1;strokeColor=none;fillColor=#ffe8f0;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="510" y="155" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="modules-analysis" value="📊 분석 모듈: 뉴스 데이터 AI 처리 및 요약 (갱신 기능 포함)" style="text;html=1;strokeColor=none;fillColor=#e8fff0;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="510" y="180" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="modules-api" value="🌐 API 모듈: 외부 서비스 연동 및 통신" style="text;html=1;strokeColor=none;fillColor=#fff0e8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="510" y="205" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="modules-interface" value="📱 인터페이스: 다중 디바이스 출력 관리" style="text;html=1;strokeColor=none;fillColor=#e8f8ff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="510" y="230" width="380" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="UI 출력 구조">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="user" value="User" style="shape=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="20" y="100" width="40" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="react" value="React App" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="fastapi" value="FastAPI API" style="shape=rectangle;" vertex="1" parent="1">
+          <mxGeometry x="230" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="store" value="Summary Store" style="shape=database;" vertex="1" parent="1">
+          <mxGeometry x="360" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell style="endArrow=block;" edge="1" parent="1" source="user" target="react"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell style="endArrow=block;" edge="1" parent="1" source="react" target="fastapi"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell style="endArrow=block;" edge="1" parent="1" source="fastapi" target="store"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell style="endArrow=block;" edge="1" parent="1" source="fastapi" target="react"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

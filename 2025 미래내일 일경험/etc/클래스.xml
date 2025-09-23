@@ -1,0 +1,958 @@
+<!-- NewsSummary 클래스 -->
+        <mxCell id="NewsSummary" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffecd2;strokeColor=#fcb69f;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="100" width="400" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-title" value="NewsSummary" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="30" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="56" width="400" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr1" value="- _summary_id: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="64" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr2" value="- _profile_id: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="90" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr3" value="- _summary_text: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="116" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr4" value="- _news_items: List[NewsItem]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="142" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr5" value="- _created_timestamp: datetime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="168" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr6" value="- _expiry_time: datetime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="194" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="220" width="400" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-method1" value="+ get_summary_id(self) -> str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="228" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-method2" value="+ add_news_item(self, item: NewsItem) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="254" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-method3" value="+ is_expired(self) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="280" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-method4" value="+ format_for_device(self, device_type: str) -> str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="306" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-method5" value="+ to_json(self) -> str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="332" width="400" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- InterfaceModule 클래스 -->
+        <mxCell id="InterfaceModule" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="1080" width="450" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-title" value="InterfaceModule" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="30" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="56" width="450" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-attr1" value="- _devices: List[Device]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="64" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-attr2" value="- _current_device: Optional[Device]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="90" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="116" width="450" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method1" value="+ receive_news_data(self, summary: NewsSummary) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="124" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method2" value="+ detect_device(self) -> Device" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="150" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method3" value="+ display_on_device(self, device: Device, summary: NewsSummary) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="176" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method4" value="+ format_for_device(self, device: Device, summary: NewsSummary) -> str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="202" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method5" value="+ check_compatibility(self, device: Device) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="228" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method6" value="+ send_output(self) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="254" width="450" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Device 추상 클래스 -->
+        <mxCell id="Device" value="" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1450" width="350" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-title" value="&lt;&lt;abstract&gt;&gt; Device" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=3;" vertex="1" parent="Device">
+          <mxGeometry y="30" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Device">
+          <mxGeometry y="56" width="350" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-attr1" value="# _device_id: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Device">
+          <mxGeometry y="64" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-attr2" value="# _device_type: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Device">
+          <mxGeometry y="90" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-attr3" value="# _screen_size: Tuple[int, int]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Device">
+          <mxGeometry y="116" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Device">
+          <mxGeometry y="142" width="350" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-method1" value="+ get_device_id(self) -> str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Device">
+          <mxGeometry y="150" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-method2" value="+ @abstractmethod display(self, content: str) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontStyle=2;" vertex="1" parent="Device">
+          <mxGeometry y="176" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-method3" value="+ @abstractmethod check_compatibility(self) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontStyle=2;" vertex="1" parent="Device">
+          <mxGeometry y="202" width="350" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Smartphone 클래스 -->
+        <mxCell id="Smartphone" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1750" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-title" value="Smartphone" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="Smartphone">
+          <mxGeometry y="30" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Smartphone">
+          <mxGeometry y="56" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-attr1" value="- _has_widget: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Smartphone">
+          <mxGeometry y="64" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-attr2" value="- _app_version: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Smartphone">
+          <mxGeometry y="90" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Smartphone">
+          <mxGeometry y="116" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-method1" value="+ display(self, content: str) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Smartphone">
+          <mxGeometry y="124" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-method2" value="+ check_compatibility(self) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Smartphone">
+          <mxGeometry y="150" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Tablet 클래스 -->
+        <mxCell id="Tablet" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1750" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-title" value="Tablet" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="Tablet">
+          <mxGeometry y="30" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Tablet">
+          <mxGeometry y="56" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-attr1" value="- _orientation: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Tablet">
+          <mxGeometry y="64" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-attr2" value="- _touch_support: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Tablet">
+          <mxGeometry y="90" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Tablet">
+          <mxGeometry y="116" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-method1" value="+ display(self, content: str) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Tablet">
+          <mxGeometry y="124" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-method2" value="+ check_compatibility(self) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Tablet">
+          <mxGeometry y="150" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- PC 클래스 -->
+        <mxCell id="PC" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="1750" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-title" value="PC" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="PC">
+          <mxGeometry y="30" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="PC">
+          <mxGeometry y="56" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-attr1" value="- _browser_type: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PC">
+          <mxGeometry y="64" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-attr2" value="- _resolution: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PC">
+          <mxGeometry y="90" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="PC">
+          <mxGeometry y="116" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-method1" value="+ display(self, content: str) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PC">
+          <mxGeometry y="124" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-method2" value="+ check_compatibility(self) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PC">
+          <mxGeometry y="150" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- 관계선들 -->
+        
+        <!-- NewsAgentMain -> SystemModule (컴포지션) -->
+        <mxCell id="main-to-system" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;strokeWidth=2;strokeColor=#3498db;" edge="1" parent="1" source="NewsAgentMain-attr1" target="SystemModule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="main-to-system-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="main-to-system">
+          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- NewsAgentMain -> NewsAnalysisModule (컴포지션) -->
+        <mxCell id="main-to-analysis" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;strokeWidth=2;strokeColor=#3498db;" edge="1" parent="1" source="NewsAgentMain-attr2" target="NewsAnalysisModule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="main-to-analysis-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="main-to-analysis">
+          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- NewsAgentMain -> InterfaceModule (컴포지션) -->
+        <mxCell id="main-to-interface" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;strokeWidth=2;strokeColor=#3498db;" edge="1" parent="1" source="NewsAgentMain-attr3" target="InterfaceModule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="main-to-interface-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="main-to-interface">
+          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- SystemModule -> UserProfile (연관관계) -->
+        <mxCell id="system-to-profile" style="endArrow=open;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#e74c3c;" edge="1" parent="1" source="SystemModule" target="UserProfile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="system-to-profile-label" value="manages\n1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;" vertex="1" connectable="0" parent="system-to-profile">
+          <mxGeometry x="0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- NewsAnalysisModule -> NewsSummary (생성관계) -->
+        <mxCell id="analysis-to-summary" style="endArrow=open;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#27ae60;strokeDashArray=5 5;" edge="1" parent="1" source="NewsAnalysisModule" target="NewsSummary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-to-summary-label" value="creates\n1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;" vertex="1" connectable="0" parent="analysis-to-summary">
+          <mxGeometry x="0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- NewsAnalysisModule -> UserProfile (의존관계) -->
+        <mxCell id="analysis-to-profile" style="endArrow=open;endFill=0;html=1;rounded=0;strokeWidth=1;strokeColor=#9b59b6;strokeDashArray=5 5;" edge="1" parent="1" source="NewsAnalysisModule-method3" target="UserProfile">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="828" />
+              <mxPoint x="1000" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="analysis-to-profile-label" value="uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;" vertex="1" connectable="0" parent="analysis-to-profile">
+          <mxGeometry x="0.3" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- InterfaceModule -> Device (집합관계) -->
+        <mxCell id="interface-to-device" style="endArrow=diamondThin;endFill=0;endSize=20;html=1;rounded=0;strokeWidth=2;strokeColor=#f39c12;" edge="1" parent="1" source="InterfaceModule-attr1" target="Device">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-to-device-label" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="interface-to-device">
+          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- InterfaceModule -> NewsSummary (의존관계) -->
+        <mxCell id="interface-to-summary" style="endArrow=open;endFill=0;html=1;rounded=0;strokeWidth=1;strokeColor=#9b59b6;strokeDashArray=5 5;" edge="1" parent="1" source="InterfaceModule-method1" target="NewsSummary">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="1204" />
+              <mxPoint x="1100" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="interface-to-summary-label" value="uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;" vertex="1" connectable="0" parent="interface-to-summary">
+          <mxGeometry x="0.5" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Device 상속 관계들 -->
+        <mxCell id="smartphone-extends-device" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#2c3e50;" edge="1" parent="1" source="Smartphone" target="Device">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tablet-extends-device" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#2c3e50;" edge="1" parent="1" source="Tablet" target="Device">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pc-extends-device" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#2c3e50;" edge="1" parent="1" source="PC" target="Device">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 범례 박스 -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#dee2e6;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1400" width="350" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="📋 Python UML 관계 범례" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="1410" width="350" height="25" as="geometry" />
+        </mxCell>
+        
+        <!-- 범례 항목들 -->
+        <mxCell id="legend-composition" value="◆── 컴포지션 (강한 포함)" style="text;html=1;strokeColor=none;fillColor=#e8f5e8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="1445" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-aggregation" value="◇── 집합 (약한 포함)" style="text;html=1;strokeColor=none;fillColor=#fff8e8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="1470" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-association" value="── 연관관계 (manages)" style="text;html=1;strokeColor=none;fillColor=#ffe8e8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="1495" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-dependency" value="┄┄ 의존관계 (uses)" style="text;html=1;strokeColor=none;fillColor=#f0e8ff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="1520" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-inheritance" value="▷── 상속관계 (extends)" style="text;html=1;strokeColor=none;fillColor=#e8f8ff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="1545" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-creation" value="┄─ 생성관계 (creates)" style="text;html=1;strokeColor=none;fillColor=#e8ffe8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="1570" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-python" value="🐍 Python 특징: snake_case, Optional, @abstractmethod, @classmethod" style="text;html=1;strokeColor=none;fillColor=#e8f0ff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="1595" width="330" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile><?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-01-01T00:00:00.000Z" agent="drawio" version="24.7.17">
+  <diagram name="UML 클래스 다이어그램" id="uml-class-diagram">
+    <mxGraphModel dx="2500" dy="1800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 제목 -->
+        <mxCell id="title" value="🐍 뉴스 에이전트 시스템 UML 클래스 다이어그램 (Python)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- NewsAgentMain 클래스 -->
+        <mxCell id="NewsAgentMain" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="100" width="350" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-title" value="NewsAgentMain" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="30" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="56" width="350" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-attr1" value="- _system_module: SystemModule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="64" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-attr2" value="- _analysis_module: NewsAnalysisModule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="90" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-attr3" value="- _interface_module: InterfaceModule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="116" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-attr4" value="- _is_running: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="142" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="168" width="350" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-method1" value="+ start_application(self) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="176" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-method2" value="+ check_user_profile(self) -> Optional[UserProfile]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="202" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-method3" value="+ request_cookie_permission(self) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="228" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-method4" value="+ initialize_system(self) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="254" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-method5" value="+ process(self) -> NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="280" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-method6" value="+ send_to_interface(self, summary: NewsSummary) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="306" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAgentMain-method7" value="+ shutdown(self) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAgentMain">
+          <mxGeometry y="332" width="350" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- SystemModule 클래스 -->
+        <mxCell id="SystemModule" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="600" width="400" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-title" value="SystemModule" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="30" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="SystemModule">
+          <mxGeometry y="56" width="400" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-attr1" value="- _cookie_manager: CookieManager" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="64" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-attr2" value="- _profile_manager: ProfileManager" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="90" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-attr3" value="- _storage_manager: CloudStorageManager" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="116" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="SystemModule">
+          <mxGeometry y="142" width="400" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-method1" value="+ access_cookie_data(self) -> CookieData" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="150" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-method2" value="+ check_cookie_exists(self) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="176" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-method3" value="+ analyze_cookie_data(self, data: CookieData) -> UserProfile" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="202" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-method4" value="+ create_personalized_profile(self, data: CookieData) -> UserProfile" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="228" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-method5" value="+ create_default_profile(self) -> UserProfile" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="254" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-method6" value="+ get_user_profile(self) -> Optional[UserProfile]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="280" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-method7" value="+ check_profile_expiry(self) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="306" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-method8" value="+ update_profile(self, profile: UserProfile) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="332" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-method9" value="+ save_to_cloud(self, profile: UserProfile) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="358" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="SystemModule-method10" value="+ load_from_cloud(self) -> Optional[UserProfile]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="SystemModule">
+          <mxGeometry y="384" width="400" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- NewsAnalysisModule 클래스 -->
+        <mxCell id="NewsAnalysisModule" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="600" width="450" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-title" value="NewsAnalysisModule" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="30" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="56" width="450" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-attr1" value="- _news_api: NewsAPI" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="64" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-attr2" value="- _ai_api: OpenAIAPI" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="90" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-attr3" value="- _crawler_engine: NewsCrawler" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="116" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-attr4" value="- _summary_cache: Dict[str, NewsSummary]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="142" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="168" width="450" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method1" value="+ crawl_news_data(self) -> List[NewsData]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="176" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method2" value="+ call_ai(self, prompt: str) -> str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="202" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method3" value="+ summarize_with_profile(self, news: List[NewsData], profile: UserProfile) -> NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="228" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method4" value="+ requery(self, summary: NewsSummary) -> NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="254" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method5" value="+ generate_final_summary(self, profile: UserProfile) -> NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="280" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method6" value="+ check_summary_cache(self, profile_id: str) -> Optional[NewsSummary]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="306" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method7" value="+ is_cache_expired(self, timestamp: datetime) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="332" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method8" value="+ process_news_request(self, profile: UserProfile) -> NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="358" width="450" height="26" as="geometry" />
+        </mxCell>;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="90" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-attr3" value="- crawlerEngine: NewsCrawler" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="116" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-attr4" value="- summaryCache: Map&lt;string, NewsSummary&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="142" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="168" width="380" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method1" value="+ crawlNewsData(): List&lt;NewsData&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="176" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method2" value="+ callAI(prompt: string): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="202" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method3" value="+ summarizeWithProfile(news: List&lt;NewsData&gt;, profile: UserProfile): NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="228" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method4" value="+ requery(summary: NewsSummary): NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="254" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method5" value="+ generateFinalSummary(profile: UserProfile): NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="280" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method6" value="+ checkSummaryCache(profileId: string): NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="306" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method7" value="+ isCacheExpired(timestamp: Date): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="332" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsAnalysisModule-method8" value="+ processNewsRequest(profile: UserProfile): NewsSummary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsAnalysisModule">
+          <mxGeometry y="358" width="380" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- InterfaceModule 클래스 -->
+        <mxCell id="InterfaceModule" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="1080" width="340" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-title" value="InterfaceModule" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="30" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="56" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-attr1" value="- devices: List&lt;Device&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="64" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-attr2" value="- currentDevice: Device" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="90" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="116" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method1" value="+ receiveNewsData(summary: NewsSummary): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="124" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method2" value="+ detectDevice(): Device" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="150" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method3" value="+ displayOnDevice(device: Device, summary: NewsSummary): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="176" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method4" value="+ formatForDevice(device: Device, summary: NewsSummary): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="202" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method5" value="+ checkCompatibility(device: Device): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="228" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="InterfaceModule-method6" value="+ sendOutput(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="InterfaceModule">
+          <mxGeometry y="254" width="340" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- UserProfile 클래스 -->
+        <mxCell id="UserProfile" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#a8edea;strokeColor=#fed6e3;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="380" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-title" value="UserProfile" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="30" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="UserProfile">
+          <mxGeometry y="56" width="380" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr1" value="- _profile_id: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="64" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr2" value="- _interests: List[str]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="90" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr3" value="- _preferences: Dict[str, str]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="116" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr4" value="- _created_date: datetime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="142" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr5" value="- _last_updated: datetime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="168" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr6" value="- _is_personalized: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="194" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="UserProfile">
+          <mxGeometry y="220" width="380" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method1" value="+ get_profile_id(self) -> str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="228" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method2" value="+ add_interest(self, interest: str) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="254" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method3" value="+ set_preference(self, key: str, value: str) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="280" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method4" value="+ is_expired(self) -> bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="306" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method5" value="+ update_timestamp(self) -> None" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="332" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method6" value="+ to_json(self) -> str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="358" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method7" value="+ @classmethod from_json(cls, json_string: str) -> UserProfile" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="384" width="380" height="26" as="geometry" />
+        </mxCell>-attr1" value="- profileId: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="64" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr2" value="- interests: List&lt;string&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="90" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr3" value="- preferences: Map&lt;string, string&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="116" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr4" value="- createdDate: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="142" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr5" value="- lastUpdated: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="168" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-attr6" value="- isPersonalized: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="194" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="UserProfile">
+          <mxGeometry y="220" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method1" value="+ getProfileId(): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="228" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method2" value="+ addInterest(interest: string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="254" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method3" value="+ setPreference(key: string, value: string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="280" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method4" value="+ isExpired(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="306" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method5" value="+ updateTimestamp(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="332" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method6" value="+ toJSON(): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="358" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UserProfile-method7" value="+ static fromJSON(jsonString: string): UserProfile" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UserProfile">
+          <mxGeometry y="384" width="320" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- NewsSummary 클래스 -->
+        <mxCell id="NewsSummary" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffecd2;strokeColor=#fcb69f;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="100" width="350" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-title" value="NewsSummary" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="30" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="56" width="350" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr1" value="- summaryId: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="64" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr2" value="- profileId: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="90" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr3" value="- summaryText: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="116" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr4" value="- newsItems: List&lt;NewsItem&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="142" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr5" value="- createdTimestamp: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="168" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-attr6" value="- expiryTime: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="194" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="220" width="350" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-method1" value="+ getSummaryId(): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="228" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-method2" value="+ addNewsItem(item: NewsItem): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="254" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-method3" value="+ isExpired(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="280" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-method4" value="+ formatForDevice(deviceType: string): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="306" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="NewsSummary-method5" value="+ toJSON(): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NewsSummary">
+          <mxGeometry y="332" width="350" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Device 추상 클래스 -->
+        <mxCell id="Device" value="" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1450" width="280" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-title" value="&lt;&lt;abstract&gt;&gt; Device" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=3;" vertex="1" parent="Device">
+          <mxGeometry y="30" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Device">
+          <mxGeometry y="56" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-attr1" value="# deviceId: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Device">
+          <mxGeometry y="64" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-attr2" value="# deviceType: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Device">
+          <mxGeometry y="90" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-attr3" value="# screenSize: Dimension" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Device">
+          <mxGeometry y="116" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Device">
+          <mxGeometry y="142" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-method1" value="+ getDeviceId(): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Device">
+          <mxGeometry y="150" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-method2" value="+ abstract display(content: string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontStyle=2;" vertex="1" parent="Device">
+          <mxGeometry y="176" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Device-method3" value="+ abstract checkCompatibility(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontStyle=2;" vertex="1" parent="Device">
+          <mxGeometry y="202" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Smartphone 클래스 -->
+        <mxCell id="Smartphone" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1750" width="250" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-title" value="Smartphone" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="Smartphone">
+          <mxGeometry y="30" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Smartphone">
+          <mxGeometry y="56" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-attr1" value="- hasWidget: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Smartphone">
+          <mxGeometry y="64" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-attr2" value="- appVersion: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Smartphone">
+          <mxGeometry y="90" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Smartphone">
+          <mxGeometry y="116" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-method1" value="+ display(content: string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Smartphone">
+          <mxGeometry y="124" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Smartphone-method2" value="+ checkCompatibility(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Smartphone">
+          <mxGeometry y="150" width="250" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Tablet 클래스 -->
+        <mxCell id="Tablet" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1750" width="250" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-title" value="Tablet" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="Tablet">
+          <mxGeometry y="30" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Tablet">
+          <mxGeometry y="56" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-attr1" value="- orientation: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Tablet">
+          <mxGeometry y="64" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-attr2" value="- touchSupport: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Tablet">
+          <mxGeometry y="90" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Tablet">
+          <mxGeometry y="116" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-method1" value="+ display(content: string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Tablet">
+          <mxGeometry y="124" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="Tablet-method2" value="+ checkCompatibility(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Tablet">
+          <mxGeometry y="150" width="250" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- PC 클래스 -->
+        <mxCell id="PC" value="" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontColor=#2c3e50;shadow=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1750" width="250" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-title" value="PC" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;" vertex="1" parent="PC">
+          <mxGeometry y="30" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-line1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="PC">
+          <mxGeometry y="56" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-attr1" value="- browserType: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PC">
+          <mxGeometry y="64" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-attr2" value="- resolution: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PC">
+          <mxGeometry y="90" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-line2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="PC">
+          <mxGeometry y="116" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-method1" value="+ display(content: string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PC">
+          <mxGeometry y="124" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PC-method2" value="+ checkCompatibility(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PC">
+          <mxGeometry y="150" width="250" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- 관계선들 -->
+        
+        <!-- NewsAgentMain -> SystemModule (컴포지션) -->
+        <mxCell id="main-to-system" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;strokeWidth=2;strokeColor=#3498db;" edge="1" parent="1" source="NewsAgentMain-attr1" target="SystemModule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="main-to-system-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="main-to-system">
+          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- NewsAgentMain -> NewsAnalysisModule (컴포지션) -->
+        <mxCell id="main-to-analysis" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;strokeWidth=2;strokeColor=#3498db;" edge="1" parent="1" source="NewsAgentMain-attr2" target="NewsAnalysisModule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="main-to-analysis-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="main-to-analysis">
+          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- NewsAgentMain -> InterfaceModule (컴포지션) -->
+        <mxCell id="main-to-interface" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;strokeWidth=2;strokeColor=#3498db;" edge="1" parent="1" source="NewsAgentMain-attr3" target="InterfaceModule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="main-to-interface-label" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="main-to-interface">
+          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- SystemModule -> UserProfile (연관관계) -->
+        <mxCell id="system-to-profile" style="endArrow=open;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#e74c3c;" edge="1" parent="1" source="SystemModule" target="UserProfile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="system-to-profile-label" value="manages\n1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;" vertex="1" connectable="0" parent="system-to-profile">
+          <mxGeometry x="0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- NewsAnalysisModule -> NewsSummary (생성관계) -->
+        <mxCell id="analysis-to-summary" style="endArrow=open;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#27ae60;strokeDashArray=5 5;" edge="1" parent="1" source="NewsAnalysisModule" target="NewsSummary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="analysis-to-summary-label" value="creates\n1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;" vertex="1" connectable="0" parent="analysis-to-summary">
+          <mxGeometry x="0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- NewsAnalysisModule -> UserProfile (의존관계) -->
+        <mxCell id="analysis-to-profile" style="endArrow=open;endFill=0;html=1;rounded=0;strokeWidth=1;strokeColor=#9b59b6;strokeDashArray=5 5;" edge="1" parent="1" source="NewsAnalysisModule-method3" target="UserProfile">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="841" />
+              <mxPoint x="1000" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="analysis-to-profile-label" value="uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;" vertex="1" connectable="0" parent="analysis-to-profile">
+          <mxGeometry x="0.3" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- InterfaceModule -> Device (집합관계) -->
+        <mxCell id="interface-to-device" style="endArrow=diamondThin;endFill=0;endSize=20;html=1;rounded=0;strokeWidth=2;strokeColor=#f39c12;" edge="1" parent="1" source="InterfaceModule-attr1" target="Device">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="interface-to-device-label" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" connectable="0" parent="interface-to-device">
+          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- InterfaceModule -> NewsSummary (의존관계) -->
+        <mxCell id="interface-to-summary" style="endArrow=open;endFill=0;html=1;rounded=0;strokeWidth=1;strokeColor=#9b59b6;strokeDashArray=5 5;" edge="1" parent="1" source="InterfaceModule-method1" target="NewsSummary">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="1204" />
+              <mxPoint x="1080" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="interface-to-summary-label" value="uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;" vertex="1" connectable="0" parent="interface-to-summary">
+          <mxGeometry x="0.5" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Device 상속 관계들 -->
+        <mxCell id="smartphone-extends-device" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#2c3e50;" edge="1" parent="1" source="Smartphone" target="Device">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tablet-extends-device" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#2c3e50;" edge="1" parent="1" source="Tablet" target="Device">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pc-extends-device" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#2c3e50;" edge="1" parent="1" source="PC" target="Device">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 범례 박스 -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#dee2e6;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1400" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="📋 UML 관계 범례" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#2c3e50;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1410" width="300" height="25" as="geometry" />
+        </mxCell>
+        
+        <!-- 범례 항목들 -->
+        <mxCell id="legend-composition" value="◆── 컴포지션 (강한 포함)" style="text;html=1;strokeColor=none;fillColor=#e8f5e8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1445" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-aggregation" value="◇── 집합 (약한 포함)" style="text;html=1;strokeColor=none;fillColor=#fff8e8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1470" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-association" value="── 연관관계 (manages)" style="text;html=1;strokeColor=none;fillColor=#ffe8e8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1495" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-dependency" value="┄┄ 의존관계 (uses)" style="text;html=1;strokeColor=none;fillColor=#f0e8ff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1520" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-inheritance" value="▷── 상속관계 (extends)" style="text;html=1;strokeColor=none;fillColor=#e8f8ff;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1545" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-creation" value="┄─ 생성관계 (creates)" style="text;html=1;strokeColor=none;fillColor=#e8ffe8;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1570" width="280" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

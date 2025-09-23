@@ -1,0 +1,32 @@
+sequenceDiagram
+    participant API as FastAPI 서버
+    participant FS as 파일시스템
+    participant UI as React UI
+    participant U as 사용자
+    participant EXT as 외부 AI API
+
+    Note over API,EXT: 프로파일 보관 기한 체크 프로세스
+
+    API->>FS: 사용자 프로파일 접근
+    API->>API: 프로파일 보관 기한 초과?
+    
+    alt YES 기한 초과
+        Note over API: 프로파일 갱신 필요
+        API->>UI: 쿠키 데이터 사용 권한 재요청
+        UI->>U: 권한 재승인 팝업
+        U->>UI: 승인/거부 선택
+        
+        alt 승인
+            UI->>API: 새로운 쿠키 데이터
+            API->>EXT: 쿠키 데이터 분석
+            EXT-->>API: 업데이트된 관심사
+            API->>FS: 프로파일 업데이트
+        else 거부
+            API->>FS: 기존 프로파일 연장 사용
+        end
+        
+        API->>API: 뉴스 요약 생성으로 진행
+    else NO 기한 내
+        Note over API: 기존 프로파일 사용
+        API->>API: 뉴스 요약 생성으로 진행
+    end

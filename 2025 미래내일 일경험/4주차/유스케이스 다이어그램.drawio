@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-06-22T10:00:00.000Z" agent="5.0" etag="example" version="24.0.0" type="device">
+  <diagram name="AI뉴스에이전트_유스케이스" id="usecase-diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 시스템 경계 -->
+        <mxCell id="system-boundary" value="AI 뉴스 에이전트 시스템" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#4CAF50;strokeWidth=3;fillColor=none;fontSize=16;fontStyle=1;verticalAlign=top;spacingTop=20;" vertex="1" parent="1">
+          <mxGeometry x="300" y="120" width="720" height="580" as="geometry" />
+        </mxCell>
+        
+        <!-- 액터들 -->
+        <mxCell id="actor-user" value="👤&#xa;일반 사용자" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fontStyle=1;fillColor=#E3F2FD;strokeColor=#1976D2;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="300" width="60" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="actor-openai" value="🤖&#xa;OpenAI API" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fontStyle=1;fillColor=#FFEBEE;strokeColor=#D32F2F;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="200" width="60" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="actor-newsapi" value="📰&#xa;뉴스 API" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fontStyle=1;fillColor=#FFEBEE;strokeColor=#D32F2F;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="450" width="60" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- 핵심 유스케이스들 -->
+        <mxCell id="uc-001" value="UC-001&#xa;사용자 맞춤&#xa;뉴스 요약 조회" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#E8F5E8;strokeColor=#2E7D32;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="350" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc-002" value="UC-002&#xa;AI 뉴스&#xa;요약 생성" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="550" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc-003" value="UC-003&#xa;AI 재질의&#xa;및 검증" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="750" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc-004" value="UC-004&#xa;사용자 프로파일&#xa;생성/업데이트" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#FFF3E0;strokeColor=#EF6C00;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="350" y="320" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc-005" value="UC-005&#xa;디폴트 프로파일&#xa;처리" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#FFF3E0;strokeColor=#EF6C00;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="550" y="320" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc-006" value="UC-006&#xa;뉴스 요약&#xa;갱신" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#FCE4EC;strokeColor=#C2185B;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="750" y="320" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc-007" value="UC-007&#xa;사용자 인터페이스&#xa;출력" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#E8F5E8;strokeColor=#2E7D32;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="350" y="460" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc-008" value="UC-008&#xa;주제 기반&#xa;뉴스 필터링" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#FCE4EC;strokeColor=#C2185B;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="550" y="460" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc-009" value="UC-009&#xa;사용자 피드백&#xa;기반 추천 개선" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#FCE4EC;strokeColor=#C2185B;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="750" y="460" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc-010" value="UC-010&#xa;다국어 뉴스&#xa;요약 출력" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#E8F5E8;strokeColor=#2E7D32;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="350" y="580" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 사용자 연결 -->
+        <mxCell id="user-uc001" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#1976D2;" edge="1" parent="1" source="actor-user" target="uc-001">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="350" as="sourcePoint" />
+            <mxPoint x="350" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="user-uc004" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#1976D2;" edge="1" parent="1" source="actor-user" target="uc-004">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="360" as="sourcePoint" />
+            <mxPoint x="350" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="user-uc005" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#1976D2;" edge="1" parent="1" source="actor-user" target="uc-005">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="360" as="sourcePoint" />
+            <mxPoint x="550" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="user-uc007" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#1976D2;" edge="1" parent="1" source="actor-user" target="uc-007">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="420" as="sourcePoint" />
+            <mxPoint x="350" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="user-uc009" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#1976D2;" edge="1" parent="1" source="actor-user" target="uc-009">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="420" as="sourcePoint" />
+            <mxPoint x="750" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="user-uc010" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#1976D2;" edge="1" parent="1" source="actor-user" target="uc-010">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="420" as="sourcePoint" />
+            <mxPoint x="350" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Include 관계 -->
+        <mxCell id="include-001-002" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1" source="uc-001" target="uc-002">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="470" y="220" as="sourcePoint" />
+            <mxPoint x="550" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="include-002-003" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1" source="uc-002" target="uc-003">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="670" y="220" as="sourcePoint" />
+            <mxPoint x="750" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="include-001-004" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1" source="uc-001" target="uc-004">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="410" y="260" as="sourcePoint" />
+            <mxPoint x="410" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="include-001-008" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=#666666;" edge="1" parent="1" source="uc-001" target="uc-008">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="470" y="260" as="sourcePoint" />
+            <mxPoint x="550" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Extend 관계 -->
+        <mxCell id="extend-001-006" value="&lt;&lt;extend&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1" source="uc-006" target="uc-001">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="750" y="320" as="sourcePoint" />
+            <mxPoint x="470" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="extend-007-010" value="&lt;&lt;extend&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;strokeColor=#999999;" edge="1" parent="1" source="uc-010" target="uc-007">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="410" y="580" as="sourcePoint" />
+            <mxPoint x="410" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 외부 API 연결 -->
+        <mxCell id="openai-uc002" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#D32F2F;" edge="1" parent="1" source="uc-002" target="actor-openai">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="670" y="220" as="sourcePoint" />
+            <mxPoint x="1150" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="openai-uc003" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#D32F2F;" edge="1" parent="1" source="uc-003" target="actor-openai">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="870" y="220" as="sourcePoint" />
+            <mxPoint x="1150" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="openai-uc006" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#D32F2F;" edge="1" parent="1" source="uc-006" target="actor-openai">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="870" y="360" as="sourcePoint" />
+            <mxPoint x="1150" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="openai-uc010" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#D32F2F;" edge="1" parent="1" source="uc-010" target="actor-openai">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="620" as="sourcePoint" />
+            <mxPoint x="1150" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="newsapi-uc001" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#D32F2F;" edge="1" parent="1" source="uc-001" target="actor-newsapi">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="220" as="sourcePoint" />
+            <mxPoint x="1150" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 범례 -->
+        <mxCell id="legend" value="범례" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#F5F5F5;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="600" width="200" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-include" value="&lt;&lt;include&gt;&gt; : 필수 포함" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="630" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-extend" value="&lt;&lt;extend&gt;&gt; : 선택적 확장" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="650" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-color1" value="초록: 핵심기능" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="670" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-color2" value="보라: AI기능" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="670" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-color3" value="주황: 프로파일" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="690" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-color4" value="분홍: 고급기능" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="690" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
