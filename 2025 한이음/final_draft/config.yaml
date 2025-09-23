@@ -1,0 +1,25 @@
+# STT (ETRI) 설정
+stt:
+  api_url: "http://epretx.etri.re.kr:8000/api/WiseASR_Recognition"
+  language_code: "korean"
+
+# TTS 설정
+tts:
+  language: "ko"
+  speaker_id: 0         # 사용하려는 음성 ID (한국어는 0)
+  sample_rate: 22050
+  device: "auto"        # "cpu", "cuda" 또는 "auto"
+
+# VAD (Cobra) 설정
+vad:
+  # 마이크가 지원하는 네이티브 샘플링 레이트 (예: 48000)
+  # Cobra는 이 입력을 받아 내부적으로 16000Hz로 리샘플링하여 처리합니다.
+  hardware_rate: 48000
+  # Cobra VAD는 음성 확률이 높게 나오는 편이라 threshold를 높게 설정하는 것이 좋습니다.
+  threshold: 0.8
+  # 음성 종료를 판단하기 전까지의 최소 무음 시간 (ms)
+  min_silence_duration_ms: 1000
+
+# 일반 설정
+general:
+  timezone: "Asia/Seoul"
