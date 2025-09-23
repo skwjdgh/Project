@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <title>주민등록표 초본</title>
+    <link rel="stylesheet" href="extra.css"/>
+    <script>
+        // 현재 날짜·시간을 "YYYY년 MM월 DD일 HH:MM:SS" 형식으로 리턴하는 함수
+        function getCurrentDateTime() {
+            const now = new Date();
+            const yyyy = now.getFullYear();
+            const mm = String(now.getMonth() + 1).padStart(2, '0');
+            const dd = String(now.getDate()).padStart(2, '0');
+            const hh = String(now.getHours()).padStart(2, '0');
+            const min = String(now.getMinutes()).padStart(2, '0');
+            const ss = String(now.getSeconds()).padStart(2, '0');
+            return `${yyyy}년 ${mm}월 ${dd}일 ${hh}:${min}:${ss}`;
+        }
+
+        // DOM에 날짜 반영하는 함수
+        function updateDateTime() {
+            const dateTimeEl = document.getElementById('issue-datetime');
+            if (dateTimeEl) {
+                dateTimeEl.textContent = getCurrentDateTime();
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            updateDateTime();
+        });
+    </script>
+</head>
+<body>
+<div class="doc-container">
+    <div class="doc-header">
+        <span class="docinfo">
+          문서확인번호 : 2025-0806-1000-01<br/>
+          <span id="issue-datetime"></span>
+        </span>
+    </div>
+
+    <div class="doc-title">주민등록표</div>
+    <div class="doc-subtitle">( 초&nbsp;&nbsp;본 )</div>
+
+    <div class="issuer">서울특별시 마포구청장</div>
+
+    <table class="info-table">
+        <tr>
+            <th>성명(한자)</th>
+            <td>홍길동</td>
+            <th>주민등록번호</th>
+            <td>901111-1******</td>
+        </tr>
+        <tr>
+            <th>세대주 성명</th>
+            <td>홍길동</td>
+            <th>세대주와의 관계</th>
+            <td>본인</td>
+        </tr>
+    </table>
+
+    <table class="list-table">
+        <thead>
+        <tr>
+            <th style="width: 45%">주소</th>
+            <th style="width: 20%">전입일</th>
+            <th style="width: 20%">신고일</th>
+            <th style="width: 15%">변동사유</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="addr-cell">-</td>
+            <td>2010-03-01</td>
+            <td>2010-03-01</td>
+            <td>군입대</td>
+        </tr>
+        <tr>
+            <td class="addr-cell">-</td>
+            <td>2012-12-15</td>
+            <td>2012-12-15</td>
+            <td>전역</td>
+        </tr>
+        <tr>
+            <td class="addr-cell">경기도 수원시 팔달구 중앙로 100</td>
+            <td>2015-05-20</td>
+            <td>2015-05-20</td>
+            <td>전입</td>
+        </tr>
+        <tr>
+            <td class="addr-cell">서울특별시 강남구 테헤란로 200</td>
+            <td>2021-03-10</td>
+            <td>2021-03-10</td>
+            <td>전입</td>
+        </tr>
+        <tr>
+            <td class="addr-cell"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="addr-cell"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="addr-cell"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="addr-cell"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="addr-cell"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="addr-cell"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="ye-bak">
+            <td colspan="4">== 이하 여백 ==</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="notice-box">
+        이 초본은 주민등록법 시행령에 따라 개인의 인적사항 및 주소변경 사항을 증명합니다.<br/>
+        발급기관: 서울특별시 마포구청 | 담당자: OOO | 연락처: 02-3153-5114
+    </div>
+</div>
+</body>
+</html>

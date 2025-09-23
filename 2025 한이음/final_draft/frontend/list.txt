@@ -1,0 +1,38 @@
+
+# stt tts 관련
+/home/test/Desktop/Kiosk_project/Backend/Utility/STT_TTS/__init__.py
+/home/test/Desktop/Kiosk_project/Backend/Utility/STT_TTS/def_exceptions.py
+/home/test/Desktop/Kiosk_project/Backend/Utility/STT_TTS/def_interface.py
+/home/test/Desktop/Kiosk_project/Backend/Utility/STT_TTS/def_types.py
+/home/test/Desktop/Kiosk_project/Backend/Utility/STT_TTS/imp_stt_etri.py
+/home/test/Desktop/Kiosk_project/Backend/Utility/STT_TTS/imp_tts_melotts.py
+/home/test/Desktop/Kiosk_project/Backend/Utility/STT_TTS/imp_vad_cobra.py
+/home/test/Desktop/Kiosk_project/Backend/Utility/STT_TTS/factory.py
+/home/test/Desktop/Kiosk_project/.env
+/home/test/Desktop/Kiosk_project/config.yaml
+# 백엔드 서버 관련
+/home/test/Desktop/Kiosk_project/Backend/main.py
+
+# 프론트엔드
+/home/test/Desktop/Kiosk_project/frontend/public/document1.html
+/home/test/Desktop/Kiosk_project/frontend/public/extract1.html
+/home/test/Desktop/Kiosk_project/frontend/public/family1.html
+/home/test/Desktop/Kiosk_project/frontend/public/healthInsurance1.html
+/home/test/Desktop/Kiosk_project/frontend/src/components/DocumentViewer.js
+/home/test/Desktop/Kiosk_project/frontend/src/components/FestivalScreen.js
+/home/test/Desktop/Kiosk_project/frontend/src/components/PinInputScreen.js
+/home/test/Desktop/Kiosk_project/frontend/src/components/WeatherScreen.js
+/home/test/Desktop/Kiosk_project/frontend/src/components/WelcomeScreen.js
+
+1. 백엔드,프론트 각 파트의 동작은 확인함. 다만 stt_tts 기능을 프론트에 붙이는 것이 목적
+2-1. 현재 코드 수정 없이 반드시 그대로 사용(기본 규칙). 
+2-2. 수정이 가능한 부분
+단 백엔드의 main.py의 내용 추가를 통해 stt_tts 기능을 기존 서버에 추가하여 동작시킬 것(즉,stt_tts를 구현하기 위한 서버를 생성하지 말 것),
+프론트의 html들은 <script>구역에 stt_tts 관련 내용이 있음. 해당 양식에 맞추어 window.onload 방식으로 구현 요청.(기본적으로 tts를 통해 사운드를 출력한 뒤, 즉시 stt실행)
+js는 useEffect를 통해 코드를 추가하는 방식으로 구현.
+추가적인 파일이 필요할 경우, 구현.
+2-3 stt_tts는 로직 및 타이밍 문제가 발생하지 않도록 구현할 것, 사운드가 중첩되지 않도록 타이밍을 신경쓰고, 각 동작(stT,tts)은 특정 동작(첫 실행, 새로고침, 화면 클릭, 버튼 클릭,텍스트 인식 실패 등)을 통해 1회만 동작해야함
+2-4 리액트 페이지들의 stt_tts는 useVoiceFlow.js를 통해 대화 흐름이 관리되며 stt의 경우, 텍스트가 app.js를 경유해 리액트 페이지에서 동작하도록 설계되어야함
+2-5 동작 버튼은 반드시 동작해야함
+3. 수정한 부분에 대해서 주석을 통해 표시할 것, 동작에 대해 주석으로 표기할 것
+

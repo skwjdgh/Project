@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>주민등록등본(예시)</title>
+    <style>
+        @media print {
+            body, html {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                box-shadow: none;
+                border: none;
+            }
+        }
+        body {
+            font-family: '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 210mm;
+            min-height: 297mm;
+            background: #fff;
+            border: 1px solid #888;
+            padding: 32px 40px;
+            box-sizing: border-box;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.7em;
+            letter-spacing: 3px;
+        }
+        .meta-table, .main-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 22px;
+        }
+        .meta-table td {
+            border: 1px solid #bbb;
+            padding: 7px 12px;
+            font-size: 1em;
+        }
+        .meta-table .label {
+            background: #f3f3f3;
+            font-weight: bold;
+            width: 120px;
+            text-align: center;
+        }
+        .main-table th, .main-table td {
+            border: 1px solid #666;
+            padding: 8px 10px;
+            text-align: center;
+            font-size: 1em;
+            height: 38px;
+            min-width: 110px;
+            box-sizing: border-box;
+        }
+        .main-table th {
+            background: #eaeaea;
+        }
+        .seal {
+            text-align: right;
+            margin-top: 28px;
+            font-size: 1.1em;
+        }
+        .footer {
+            font-size: 0.97em;
+            color: #888;
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        // 페이지 로드 시 발급일자 자동 삽입
+        window.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            document.getElementById('issue-date').textContent = `${yyyy}-${mm}-${dd}`;
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h2>주민등록표 등본 (등본)</h2>
+    <table class="meta-table">
+        <tr>
+            <td class="label">세대주 성명</td>
+            <td>이영희</td>
+            <td class="label">세대구성사유</td>
+            <td>독립세대</td>
+        </tr>
+        <tr>
+            <td class="label">세대주와의 관계</td>
+            <td>본인</td>
+            <td class="label">발급일</td>
+            <td><span id="issue-date"></span></td>
+        </tr>
+        <tr>
+            <td class="label">주소</td>
+            <td colspan="3">서울특별시 마포구 달맞이길 77 (예시동 101-202)</td>
+        </tr>
+    </table>
+    <table class="main-table">
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>성명</th>
+            <th>주민등록번호</th>
+            <th>세대주와의 관계</th>
+            <th>출생연월일</th>
+            <th>변동사항</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>이영희</td>
+            <td>970101-2456789</td>
+            <td>본인</td>
+            <td>1997-01-01</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="seal">
+        (서울특별시 마포구청장 직인)
+    </div>
+    <div class="footer">
+        ※ 본 등본은 예시용으로 실제 효력이 없습니다.<br>
+        ※ 개인정보 보호를 위해 주민등록번호는 임의의 더미 데이터입니다.
+    </div>
+</div>
+</body>
+</html>

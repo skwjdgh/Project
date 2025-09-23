@@ -1,0 +1,41 @@
+/* src/styles/RecognitionScreen.css */
+
+.recognition-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 30px; /* 햄스터와 말풍선 사이 간격 */
+}
+
+.hamster-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.hamster-image-small {
+  width: 290px;
+}
+
+.speech-bubble-fixed {
+  background: #f0f2f5;
+  border-radius: 1em;
+  padding: 20px 40px; /* 패딩 증가 */
+  font-size: var(--font-size-large); /* 폰트 크기 증가 */
+}
+
+/* ... (로딩 스피너 애니메이션은 동일) ... */
+
+.user-speech-bubble {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0px 50px; /* 패딩 증가 */
+  border-radius: 1em;
+  font-size: 2.5rem; /* 폰트 크기 대폭 증가 */
+  font-weight: bold;
+  max-width: 90%;
+  text-align: center;
+}

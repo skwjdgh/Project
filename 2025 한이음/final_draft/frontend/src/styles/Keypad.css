@@ -1,0 +1,65 @@
+/* src/styles/Keypad.css */
+
+/* 키패드 전체 래퍼: 가운데 정렬 */
+.keypad-wrapper {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 입력 디스플레이(회색 바): 높이 고정 및 너비 축소 */
+.keypad-display {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom: 2px solid #ccc;
+    width: 60%;
+    max-width: 360px;
+}
+
+/* 버튼 그리드: 고정 280px, 셀 간격 유지 */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    width: 380px;
+    height: 240px;
+    margin: 0 auto;
+}
+
+/* 버튼: 정사각형 유지, 크게 터치하기 편하게 */
+.keypad-button {
+    width: 100%;
+    height: 60px;
+    aspect-ratio: 1 / 1;
+    font-size: 40px;
+    padding: 0;
+    border: 2px solid #888;
+    background: #f0f0f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+/* 버튼 누를 때 약간 축소되는 효과 */
+.keypad-button:active {
+    transform: scale(0.95);
+}
+
+/* 정정 버튼 색상 변경 */
+.btn-clear {
+    background-color: #ffcccc;
+    border-color: #ff6666;
+    font-weight: bold;
+}
+
+/* 확인 버튼 색상 변경 */
+.btn-submit {
+    background-color: #cce5ff;
+    border-color: #3399ff;
+    font-weight: bold;
+}

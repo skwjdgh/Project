@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>가족관계증명서</title>
+    <link rel="stylesheet" href="family.css"/>
+    <script>
+        // 페이지 로드 시 발급일과 발급시각 자동 삽입
+        window.addEventListener('DOMContentLoaded', () => {
+            const now = new Date();
+            const yyyy = now.getFullYear();
+            const mm = String(now.getMonth() + 1).padStart(2, '0');
+            const dd = String(now.getDate()).padStart(2, '0');
+            const hh = String(now.getHours()).padStart(2, '0');
+            const mi = String(now.getMinutes()).padStart(2, '0');
+            const ss = String(now.getSeconds()).padStart(2, '0');
+
+            // 발급일과 발급시각 갱신
+            document.getElementById('issue-date').textContent = `${yyyy}년 ${mm}월 ${dd}일`;
+            document.getElementById('issue-datetime').textContent = `${yyyy}-${mm}-${dd} ${hh}:${mi}:${ss}`;
+        });
+
+    </script>
+</head>
+<body>
+<div class="certificate-container">
+    <div class="watermark">
+        <p>대 한 민 국</p>
+        <p>법 원</p>
+    </div>
+
+    <h1>가족관계증명서 (일반)</h1>
+
+    <div class="info-box">
+        <div class="info-box-label">등록기준지</div>
+        <div class="info-box-content">서울특별시 중구 세종대로 110</div>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th style="width: 15%">구분</th>
+            <th style="width: 20%">성명</th>
+            <th style="width: 20%">출생년월일</th>
+            <th style="width: 25%">주민등록번호</th>
+            <th style="width: 10%">성별</th>
+            <th style="width: 10%">본</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>본인</td>
+            <td>홍길동</td>
+            <td>1990-01-01</td>
+            <td>901111-1111111</td>
+            <td>남</td>
+            <td>홍</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 class="section-title">가족사항</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th style="width: 15%">구분</th>
+            <th style="width: 20%">성명</th>
+            <th style="width: 20%">출생년월일</th>
+            <th style="width: 25%">주민등록번호</th>
+            <th style="width: 10%">성별</th>
+            <th style="width: 10%">본</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>부</td>
+            <td>홍판서</td>
+            <td>1960-06-10</td>
+            <td>600610-1234567</td>
+            <td>남</td>
+            <td>홍</td>
+        </tr>
+        <tr>
+            <td>모</td>
+            <td>심청이</td>
+            <td>1962-09-25</td>
+            <td>620925-2345678</td>
+            <td>여</td>
+            <td>심</td>
+        </tr>
+        <tr class="spouse-row">
+            <td>배우자</td>
+            <td>김진주</td>
+            <td>1992-02-02</td>
+            <td>920202-2345678</td>
+            <td>여</td>
+            <td>김</td>
+        </tr>
+        <tr>
+            <td>자녀</td>
+            <td>홍영희</td>
+            <td>2020-03-03</td>
+            <td>200303-4456789</td>
+            <td>여</td>
+            <td>홍</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p class="certification-text">
+        위 가족관계증명서(일반)는 가족관계등록부의 기록사항과 틀림없음을 증명합니다.
+    </p>
+
+    <p class="date-text" id="issue-date"></p>
+
+    <div class="issuer-section">
+        <span class="issuer-name">
+          <strong>법원행정처 전산정보중앙관리소 전산운영책임관</strong>
+        </span>
+    </div>
+
+    <p class="footer-note">
+        ※ 위 증명서는 「가족관계의 등록 등에 관한 법률」 제15조제2항에 따른
+        등록사항을 현출한 일반증명서입니다.
+    </p>
+
+    <div class="issuance-details">
+        <p>발급시각 : <span id="issue-datetime"></span></p>
+        <p>신청인 : 홍길동</p>
+    </div>
+</div>
+</body>
+</html>

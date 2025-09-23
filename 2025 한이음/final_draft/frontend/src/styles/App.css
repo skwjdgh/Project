@@ -1,0 +1,119 @@
+/* 보기 편한 기본 폰트와 색상 변수 설정 */
+:root {
+  --background-color: #ffffff; 
+  --primary-color: #005aab;
+  --text-color: #1c1e21;
+  --font-size-large: 30px;
+  --font-size-medium: 24px;
+  --font-size-small: 20px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 키오스크 프레임 (800x1280) */
+.kiosk-frame {
+  width: 800px;
+  height: 1280px;
+  background-color: var(--background-color);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  position: relative;
+  overflow: auto;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+/* 홈 버튼 스타일 수정 */
+.home-button {
+  position: absolute;
+  /* ✅ 버튼 위치를 모서리에서 조금 더 떼어놓습니다. */
+  top: 30px;
+  right: 30px;
+  /* ✅ 어르신들을 위해 버튼 크기를 다시 키웁니다. (90px) */
+  width: 90px;
+  height: 90px;
+  background: url('../assets/home.png') no-repeat center center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  z-index: 1000; 
+  transition: transform 0.2s;
+  /* ✅ 스케일링 기준점을 오른쪽 위로 유지하여 스크롤바 방지 */
+  transform-origin: top right;
+}
+
+.home-button:hover {
+    transform: scale(1.1);
+}
+
+/* PIN 입력 화면 레이아웃 */
+.pin-screen {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;   
+  width: 100%;
+}
+
+.recognition-wrapper {
+  flex: none; 
+  margin-top: 0; 
+}
+
+.pin-wrapper {
+  flex: none;
+  display: flex;         
+  flex-direction: column;   
+  align-items: center;      
+  width: 100%;             
+  max-width: 500px;         
+}
+
+.pin-wrapper h2 {
+  font-size: var(--font-size-large);
+  margin-bottom: 20px;
+}
+
+/* 키패드 전체 그리드 형식 */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 120px); 
+  grid-template-rows: repeat(4, 40px);     
+  grid-gap: 12px;                          
+  justify-content: center;                 
+  margin-top: 16px;
+}
+
+/* 키패드 버튼 크기: 폭 넓게, 높이 낮게 */
+.keypad-button {
+  width: 100%;   
+  height: 100%;
+  font-size: var(--font-size-medium);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* 기본 버튼 스타일 (print 버튼 등) */
+button {
+  font-size: var(--font-size-medium);
+  cursor: pointer;
+}

@@ -1,0 +1,122 @@
+body {
+    background: #e4eaf5;
+    margin: 0;
+    padding: 40px 0;
+    font-family: "Malgun Gothic", "맑은 고딕", Arial, sans-serif;
+}
+.doc-container {
+    background: #fff;
+    border: 2px solid #8ca7cf;
+    border-radius: 9px;
+    width: 700px;
+    margin: auto;
+    padding: 35px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.doc-header .docinfo {
+    position: absolute;
+    right: 35px;
+    top: 35px;
+    font-size: 12px;
+    color: #245082;
+    text-align: right;
+    line-height: 1.4;
+}
+.doc-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 12px;
+    margin: 0 0 5px 0;
+    color: #1a2a47;
+}
+.doc-subtitle {
+    text-align: center;
+    font-size: 17px;
+    letter-spacing: 14px;
+    color: #334d69;
+    margin-bottom: 10px;
+}
+.issuer {
+    text-align: right;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2a3962;
+    margin-bottom: 15px;
+}
+.info-table,
+.list-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.info-table th,
+.info-table td,
+.list-table th,
+.list-table td {
+    border: 1.5px solid #a4bde1;
+    padding: 8px 10px;
+    height: 25px;
+    vertical-align: middle;
+}
+.info-table th {
+    width: 120px;
+    background: #e2effa;
+    font-weight: bold;
+    text-align: center;
+}
+.info-table td {
+    background: #fafdff;
+    text-align: center;
+}
+.list-table th {
+    background: #e2effa;
+    font-weight: bold;
+    text-align: center;
+}
+.list-table td {
+    background: #fafdff;
+    text-align: center;
+}
+.list-table td.addr-cell {
+    text-align: left;
+    padding-left: 15px;
+}
+.list-table tr.ye-bak td {
+    font-weight: 500;
+    color: #444;
+}
+.notice-box {
+    background: #edf4fb;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-top: 20px;
+    color: #26374b;
+    font-size: 13.5px;
+    line-height: 1.7;
+    border: 1px solid #c9dcef;
+}
+
+/* =============================================== */
+/* 인쇄 시 2페이지로 넘어가는 현상 방지용 코드 */
+/* =============================================== */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+  }
+  .doc-container {
+    box-shadow: none !important;
+    border: none !important;
+    transform: scale(0.98);
+    transform-origin: top center;
+  }
+}

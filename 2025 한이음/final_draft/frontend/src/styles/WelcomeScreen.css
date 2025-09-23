@@ -1,0 +1,125 @@
+/* src/styles/WelcomeScreen.css */
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* 콘텐츠를 위아래로 분산 */
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hamster-image-large {
+  width: 300px; /* 크기 살짝 키움 */
+  z-index: 10;
+}
+
+.speech-bubble-large {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 1em;
+  padding: 30px 50px;
+  font-size: var(--font-size-large);
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-top: -50px;
+  padding-top: 70px;
+  width: 700px; /* 너비 고정 */
+  box-sizing: border-box;
+}
+
+/* ... (말풍선 꼬리 ::after 스타일은 동일) ... */
+
+.input-area {
+  margin-top: 20px;
+  height: 60px; /* 높이 고정으로 로딩 시 레이아웃 변경 방지 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 음성 인식 로딩 */
+.voice-loading-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: var(--font-size-medium);
+  color: #555;
+}
+.loading-spinner-welcome {
+  width: 40px;
+  height: 40px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 검색창 */
+.search-form {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+.search-form input {
+  flex-grow: 1;
+  font-size: var(--font-size-medium);
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+.search-form button {
+  padding: 0 10px;
+  font-size: var(--font-size-medium);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+.voice-btn {
+  background-color: #5cb85c;
+  color: white;
+}
+
+
+/* 하단 메뉴 버튼 */
+.menu-buttons-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.menu-button {
+  height: 150px;
+  padding: 30px 15px; /* 버튼 크기 키움 */
+  font-size: 27px; /* 폰트 크기 키움 */
+  font-weight: bold;
+  border-radius: 15px;
+  border: 3px solid var(--primary-color);
+  background-color: #fff;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.menu-button:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}

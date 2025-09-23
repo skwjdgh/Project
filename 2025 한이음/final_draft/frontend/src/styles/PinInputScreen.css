@@ -1,0 +1,36 @@
+/* src/styles/PinInputScreen.css */
+.pin-input-screen {
+  width: 100%;
+  max-width: 500px; /* 최대 너비 설정 */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* 간격 추가 */
+}
+
+.pin-display {
+  width: 100%;
+  height: 80px; /* 높이 증가 */
+  font-size: 3rem; /* 폰트 크기 증가 */
+  text-align: center;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.keypad-button {
+  width: 100%;
+  height: 100px; /* 높이 고정 */
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: 2px solid #777;
+  border-radius: 15px;
+}
+/* ... */

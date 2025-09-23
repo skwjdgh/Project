@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>건강보험자격득실확인서</title>
+    <link rel="stylesheet" href="health.css"/>
+    <script>
+        // 페이지 로드 시 오늘 날짜를 YYYY-MM-DD 형식으로 넣기
+        window.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            document.getElementById('issue-date').textContent = `${yyyy}년 ${mm}월 ${dd}일`;
+            document.getElementById('issue-datetime').textContent =
+                `${yyyy}-${mm}-${dd} ${today.getHours().toString().padStart(2,'0')}:${today.getMinutes().toString().padStart(2,'0')}:${today.getSeconds().toString().padStart(2,'0')}`;
+        });
+    </script>
+</head>
+<body>
+<div class="document-container">
+    <header class="document-header">
+        <div class="issue-info">
+            <p>1 / 1</p>
+            <p><strong>발급번호 :</strong> G202508061430001</p>
+        </div>
+    </header>
+
+    <h1 class="document-title">건강보험자격득실확인서</h1>
+
+    <table class="applicant-info-table">
+        <tr>
+            <th style="width: 20%">확인청구자</th>
+            <th style="width: 40%">성명</th>
+            <th style="width: 40%">주민등록번호</th>
+        </tr>
+        <tr>
+            <td>본인</td>
+            <td>이영희</td>
+            <td>970101-3456789</td>
+        </tr>
+    </table>
+
+    <div class="main-content-wrapper">
+        <table class="history-table">
+            <thead>
+            <tr>
+                <th class="col-no">No</th>
+                <th class="col-type">가입자구분</th>
+                <th class="col-workplace">사업장명칭</th>
+                <th class="col-date">자격취득일</th>
+                <th class="col-date">자격상실일</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>직장가입자</td>
+                <td>(주)부산IT솔루션</td>
+                <td>2019-03-01</td>
+                <td>2022-12-31</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>직장가입자</td>
+                <td>(주)서울시스템</td>
+                <td>2023-01-15</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="5" class="blank-below">이 하 여 백</td>
+            </tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="confirmation-box">
+        <p>건강보험 자격득실내역을 위와 같이 확인합니다.</p>
+    </div>
+
+    <div class="issuer-section">
+        <h2>국민건강보험공단 이사장</h2>
+        <div class="seal-placeholder"></div>
+    </div>
+
+    <div class="footer-notes">
+        <p>※ 이 확인서의 취득일ㆍ상실일은 실제의 시점과 다를 수 있습니다.</p>
+        <p>
+            ※ 이 확인서는 건강보험 자격확인용이므로 다른 용도(재직증명, 경력증명,
+            대출 등)로 사용 시 공단에 법적인 책임이 없음을 알려드립니다.
+        </p>
+    </div>
+
+    <div class="barcode-placeholder"></div>
+</div>
+</body>
+</html>
