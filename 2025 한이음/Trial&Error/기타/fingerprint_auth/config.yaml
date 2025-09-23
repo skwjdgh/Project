@@ -1,0 +1,40 @@
+# ######################################
+#   STT 설정 (최신 ETRI API 사용)
+# ######################################
+stt:
+  api_url: "http://epretx.etri.re.kr:8000/api/WiseASR_Recognition"
+  language_code: "korean"
+
+# --- (백업) Whisper 로컬 모델 설정 ---
+# stt:
+#   model_name: "base"
+#   language: "ko"
+#   device: "cpu"
+# ------------------------------------
+
+# ######################################
+#   TTS 설정
+# ######################################
+tts:
+  language: "KR"
+  speaker_id: 0
+  sample_rate: 22050
+  device: "cpu"
+
+# ######################################
+#   VAD 설정
+# ######################################
+vad:
+  aggressiveness: 1
+  hardware_rate: 44100
+  rate: 16000
+  frame_duration_ms: 30
+  timeout_seconds: 2
+  min_speech_frames: 5
+  session_timeout_seconds: 300
+
+# ######################################
+#   일반 설정
+# ######################################
+general:
+  timezone: "Asia/Seoul"

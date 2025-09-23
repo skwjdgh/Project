@@ -1,0 +1,11 @@
+openai-whisper
+# c드라이브에 mecab을 우선 설치해야만 명령어가 실행됨
+mecab-ko
+noisereduce
+soundfile
+pydub
+pandas
+matplotlib
+seaborn
+tqdm
+numpy
