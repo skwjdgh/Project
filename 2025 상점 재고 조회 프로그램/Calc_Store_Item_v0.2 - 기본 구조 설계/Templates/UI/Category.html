@@ -1,0 +1,14 @@
+<!doctype html>
+<html><body>
+<h3>Category</h3>
+<pre id="cat"></pre>
+<script>
+async function poll(){
+  const r = await fetch('/api/category', {cache:'no-store'});
+  const j = await r.json();
+  document.getElementById('cat').innerText = JSON.stringify(j, null, 2);
+}
+setInterval(poll, 1000);
+poll();
+</script>
+</body></html>

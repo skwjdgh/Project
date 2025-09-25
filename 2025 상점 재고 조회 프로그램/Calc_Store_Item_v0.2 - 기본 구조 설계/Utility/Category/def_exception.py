@@ -1,0 +1,2 @@
+class CategoryError(Exception):
+    pass

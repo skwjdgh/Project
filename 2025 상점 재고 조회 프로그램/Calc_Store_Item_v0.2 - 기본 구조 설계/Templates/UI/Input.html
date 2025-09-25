@@ -1,0 +1,18 @@
+<!doctype html>
+<html><body>
+<h3>Input</h3>
+<form action="/api/upload-image" method="post" enctype="multipart/form-data">
+  <input type="file" name="image" accept="image/*">
+  <button type="submit">Run on Image</button>
+</form>
+<form action="/api/upload-video" method="post" enctype="multipart/form-data">
+  <input type="file" name="video" accept="video/*">
+  <button type="submit">Run on Video</button>
+</form>
+<form action="/api/start-camera" method="post">
+  <button type="submit">Start Camera</button>
+</form>
+<form action="/api/stop-camera" method="post">
+  <button type="submit">Stop Camera</button>
+</form>
+</body></html>

@@ -1,0 +1,14 @@
+<!doctype html>
+<html><body>
+<h3>Calc Output</h3>
+<pre id="agg"></pre>
+<script>
+async function poll(){
+  const r = await fetch('/api/aggregate', {cache:'no-store'});
+  const j = await r.json();
+  document.getElementById('agg').innerText = JSON.stringify(j, null, 2);
+}
+setInterval(poll, 1000);
+poll();
+</script>
+</body></html>

@@ -1,0 +1,267 @@
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>우리 가게 재고 체커</title>
+<style>
+:root{--bd:#e5e7eb;--mut:#6b7280;--pri:#2563eb}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui}
+.grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;min-height:100vh;padding:12px;background:#fafafa}
+.card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.03);display:flex;flex-direction:column}
+h3{margin:0 0 10px 0;font-size:16px}hr{border:none;border-top:1px solid var(--bd);margin:10px 0}
+textarea{width:100%;height:140px;border:1px solid var(--bd);border-radius:8px;padding:8px}
+button{border:none;background:var(--pri);color:#fff;border-radius:8px;padding:8px 12px;cursor:pointer}
+button.ghost{background:#fff;color:var(--pri);border:1px solid var(--pri)}
+select{border:1px solid var(--bd);border-radius:8px;padding:8px}.mut{color:#6b7280}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.center{display:flex;justify-content:center;align-items:center}.hidden{display:none!important}
+img,video{max-width:100%;border-radius:8px}
+#camArea{position:relative;background:#0b0f19;color:#94a3b8;height:600px;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#cam{display:none;width:100%;height:100%;object-fit:cover}
+#camOverlay{position:absolute;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:center}
+#camOverlay .hint{background:rgba(15,23,42,.4);padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.2)}
+#camTriggerWrap{height:64px;gap:16px}.iconbtn{width:64px;height:64px;cursor:pointer;border-radius:12px;border:1px dashed var(--bd);background:#fff;display:flex;align-items:center;justify-content:center}
+.badge{font-size:12px;padding:2px 6px;border-radius:6px;border:1px solid var(--bd);background:#fff}
+#outImg,#outStream{width:100%;height:600px;object-fit:cover;background:#0b0f19}
+#outEmpty{height:600px;border:1px dashed var(--bd);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#94a3b8;background:#0b0f19}
+.table{width:100%;border-collapse:collapse}.table th,.table td{border-bottom:1px solid var(--bd);padding:6px 8px;text-align:left}
+.toast{color:#fff;background:#ef4444;padding:6px 10px;border-radius:8px;display:none;margin-left:auto}
+</style></head><body>
+<div class="grid">
+
+<!-- 좌상단: 영상 입력 -->
+<div class="card">
+  <h3>영상 입력</h3>
+  <div id="camArea">
+    <video id="cam" autoplay muted playsinline></video>
+    <div id="camOverlay"><div class="hint">카메라 시작하려면 아래 아이콘 클릭</div></div>
+  </div>
+  <hr>
+  <div class="row center" id="camTriggerWrap">
+    <div class="iconbtn" id="imgPick" title="이미지 첨부">IMG</div>
+    <div class="iconbtn" id="camTrigger" title="카메라 시작">CAM</div>
+    <div class="iconbtn" id="vidPick" title="비디오 업로드">VID</div>
+  </div>
+  <div class="row">
+    <select id="deviceSel" class="fill"></select>
+    <button id="liveStop" class="ghost">중지</button>
+    <span id="liveState" class="badge" style="display:none">LIVE</span>
+    <span id="netToast" class="toast">네트워크 오류</span>
+  </div>
+  <input type="file" id="imgInput" accept="image/*" class="hidden">
+  <input type="file" id="vidInput" accept="video/*" class="hidden">
+</div>
+
+<!-- 우상단: 실시간 탐색 출력 -->
+<div class="card">
+  <h3>실시간 탐색 출력 <span class="badge" id="activeCats">-</span></h3>
+  <div class="row" style="margin-bottom:6px">
+    <button id="modeBrowser" class="ghost">브라우저 모드</button>
+    <button id="modeServer" class="ghost">서버 스트림</button>
+    <select id="serverSrc" class="fill">
+      <option value="0">서버카메라 0</option>
+      <option value="1">서버카메라 1</option>
+    </select>
+    <button id="serverStart">서버 시작</button>
+    <button id="serverStop" class="ghost">서버 중지</button>
+  </div>
+  <img id="outImg" class="hidden" alt="탐지 출력">
+  <img id="outStream" class="hidden" alt="탐지 스트림">
+  <div id="outEmpty" class="center">출력 대기중</div>
+  <div class="mut" style="margin-top:8px">유효 프레임만 갱신. 깨진 이미지 방지.</div>
+</div>
+
+<!-- 좌하단: 텍스트 카테고리 입력 -->
+<div class="card">
+  <h3>텍스트 카테고리 입력</h3>
+  <p class="mut" style="margin:0 0 8px">줄바꿈/쉼표 구분. 예) person, bottle, can</p>
+  <textarea id="plist">person</textarea>
+  <div class="row"><button id="apply">submit</button><span id="applied" class="mut"></span></div>
+</div>
+
+<!-- 우하단: 실시간 통계 -->
+<div class="card">
+  <h3>실시간 통계</h3>
+  <table class="table" id="countsTbl">
+    <thead><tr><th>라벨</th><th>개수</th></tr></thead>
+    <tbody><tr><td class="mut">대기중</td><td>-</td></tr></tbody>
+  </table>
+</div>
+
+</div>
+
+<script>
+const cam = document.getElementById('cam');
+const camOverlay = document.getElementById('camOverlay');
+const camTrigger = document.getElementById('camTrigger');
+const imgPick = document.getElementById('imgPick');
+const vidPick = document.getElementById('vidPick');
+const imgInput = document.getElementById('imgInput');
+const vidInput = document.getElementById('vidInput');
+const deviceSel = document.getElementById('deviceSel');
+const liveState = document.getElementById('liveState');
+const netToast = document.getElementById('netToast');
+
+const outImg = document.getElementById('outImg');
+const outStream = document.getElementById('outStream');
+const outEmpty = document.getElementById('outEmpty');
+const activeCats = document.getElementById('activeCats');
+
+const modeBrowser = document.getElementById('modeBrowser');
+const modeServer = document.getElementById('modeServer');
+const serverSrc = document.getElementById('serverSrc');
+const serverStart = document.getElementById('serverStart');
+const serverStop = document.getElementById('serverStop');
+
+const countsTbl = document.getElementById('countsTbl').querySelector('tbody');
+const plist = document.getElementById('plist');
+const applied = document.getElementById('applied');
+
+let currentStream=null, runningLive=false, lastImageB64=null, uiMode='browser', countsTimer=null;
+
+function renderCounts(counts){
+  const keys = Object.keys(counts||{});
+  if(!keys.length){ countsTbl.innerHTML = `<tr><td class="mut">결과 없음</td><td>-</td></tr>`; return; }
+  countsTbl.innerHTML = keys.map(k=>`<tr><td>${k}</td><td>${counts[k]}</td></tr>`).join('');
+}
+function showPlaceholder(){ outImg.classList.add('hidden'); outStream.classList.add('hidden'); outEmpty.classList.remove('hidden'); }
+function showOutB64(b64){ if(b64){ if(outImg.src!==b64) outImg.src=b64; outImg.classList.remove('hidden'); outStream.classList.add('hidden'); outEmpty.classList.add('hidden'); } else { if(!lastImageB64) showPlaceholder(); } }
+outImg.onerror = () => { if(lastImageB64){ outImg.src = lastImageB64; } else { showPlaceholder(); } };
+function switchToBrowser(){ uiMode='browser'; outStream.classList.add('hidden'); if(lastImageB64){ outImg.src=lastImageB64; outImg.classList.remove('hidden'); outEmpty.classList.add('hidden'); } else showPlaceholder(); }
+function switchToServer(){ uiMode='server'; outImg.classList.add('hidden'); outStream.src='/stream/detect?t='+Date.now(); outStream.classList.remove('hidden'); outEmpty.classList.add('hidden'); }
+
+async function listCams(){
+  const devices = await navigator.mediaDevices.enumerateDevices();
+  const cams = devices.filter(d=>d.kind==="videoinput");
+  deviceSel.innerHTML = cams.map((d,i)=>`<option value="${d.deviceId}">${d.label||'camera '+(i+1)}</option>`).join('');
+}
+async function startCam(){
+  if(currentStream){ currentStream.getTracks().forEach(t=>t.stop()); }
+  const constraints = { video: { width:{ideal:1280}, height:{ideal:720} }, audio:false };
+  const stream = await navigator.mediaDevices.getUserMedia(constraints);
+  cam.srcObject = stream; currentStream = stream; await cam.play();
+  cam.style.display='block'; camOverlay.style.display='none'; liveState.style.display='inline-block';
+}
+function stopCam(){
+  stopLiveLoop();
+  if(currentStream){ currentStream.getTracks().forEach(t=>t.stop()); currentStream=null; }
+  cam.srcObject=null; cam.style.display='none'; camOverlay.style.display='flex'; liveState.style.display='none';
+}
+
+async function startLiveLoop(){
+  if(runningLive) return; runningLive=true;
+  const MAXW = 640; // 업로드 크기 축소
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d',{willReadFrequently:true});
+
+  const fetchWithTimeout = (url, opts={}, ms=1200)=>{
+    const controller=new AbortController(); const id=setTimeout(()=>controller.abort(), ms);
+    return fetch(url,{...opts, signal:controller.signal}).finally(()=>clearTimeout(id));
+  };
+
+  const step = async ()=>{
+    if(!runningLive) return;
+    try{
+      if(!currentStream || cam.readyState < HTMLMediaElement.HAVE_CURRENT_DATA){
+        return requestAnimationFrame(step);
+      }
+      let vw=cam.videoWidth||MAXW, vh=cam.videoHeight||Math.round(MAXW*0.75);
+      const r=Math.min(1, MAXW/vw); vw=Math.round(vw*r); vh=Math.round(vh*r);
+      canvas.width=vw; canvas.height=vh; ctx.drawImage(cam,0,0,vw,vh);
+      const blob = await new Promise(r=>canvas.toBlob(r,'image/jpeg',0.7));
+      const fd = new FormData(); fd.append('frame', blob, 'f.jpg');
+
+      const res = await fetchWithTimeout('/infer/live_frame',{method:'POST',body:fd,cache:'no-store'});
+      if(res.ok){
+        const j = await res.json();
+        if(j.image_b64){ lastImageB64=j.image_b64; if(uiMode==='browser'){ outImg.src=j.image_b64; outImg.classList.remove('hidden'); outEmpty.classList.add('hidden'); } }
+        renderCounts(j.counts||{});
+        netToast.style.display='none';
+      }else{
+        netToast.style.display='inline-block';
+      }
+    }catch(_e){
+      netToast.style.display='inline-block';
+    }finally{
+      requestAnimationFrame(step); // 고정 간격 대신 가변 루프
+    }
+  };
+  requestAnimationFrame(step);
+}
+function stopLiveLoop(){ runningLive=false; }
+
+document.getElementById('apply').onclick = async () => {
+  const v = plist.value.trim();
+  const fd = new FormData(); fd.append("classes", v);
+  const r = await fetch("/update_classes",{method:"POST",body:fd});
+  const j = await r.json().catch(()=>null);
+  document.getElementById('applied').textContent = r.ok ? "적용됨" : "오류";
+  activeCats.textContent = r.ok ? (j.active_classes||[]).join(", ") || "-" : "-";
+};
+
+// 브라우저 모드
+camTrigger.onclick = async ()=>{
+  try{
+    await navigator.mediaDevices.getUserMedia({video:true,audio:false}).then(s=>{s.getTracks().forEach(t=>t.stop());}).catch(()=>{});
+    await listCams(); await startCam(); switchToBrowser(); startLiveLoop();
+    document.getElementById('camTriggerWrap').style.display='none';
+  }catch(e){ alert('카메라 접근 실패: '+e.message); }
+};
+document.getElementById('liveStop').onclick = ()=>{ stopCam(); document.getElementById('camTriggerWrap').style.display='flex'; };
+
+// 업로드
+imgPick.onclick = ()=> imgInput.click();
+imgInput.onchange = async (e)=>{
+  const f = e.target.files?.[0]; if(!f) return;
+  if(!plist.value.trim()){ alert('카테고리를 먼저 입력 후 submit 하세요.'); e.target.value=''; return; }
+  const fd = new FormData(); fd.append("file", f); fd.append("product_list", plist.value.trim());
+  try{
+    const r = await fetch("/infer/image",{method:"POST",body:fd}); const j = await r.json();
+    if(j.error){ alert('이미지 추론 오류'); return; }
+    renderCounts(j.counts||{}); switchToBrowser();
+    lastImageB64=null; outImg.src = j.image_url+'?t='+Date.now(); outImg.classList.remove('hidden'); outEmpty.classList.add('hidden');
+  }catch(err){ alert('네트워크 오류'); }
+  finally{ e.target.value=''; }
+};
+vidPick.onclick = ()=> vidInput.click();
+vidInput.onchange = async (e)=>{
+  const f = e.target.files?.[0]; if(!f) return;
+  if(!plist.value.trim()){ alert('카테고리를 먼저 입력 후 submit 하세요.'); e.target.value=''; return; }
+  const fd = new FormData(); fd.append("file", f); fd.append("product_list", plist.value.trim());
+  try{
+    const r = await fetch("/infer/video",{method:"POST",body:fd}); const j = await r.json();
+    if(j.error){ alert('비디오 추론 오류'); return; }
+    renderCounts(j.counts||{}); switchToBrowser();
+  }catch(err){ alert('네트워크 오류'); }
+  finally{ e.target.value=''; }
+};
+
+// 서버 스트림 모드
+modeBrowser.onclick = ()=> switchToBrowser();
+modeServer.onclick = ()=> switchToServer();
+serverStart.onclick = async ()=>{
+  const fd = new FormData(); fd.append('source', serverSrc.value);
+  const r = await fetch('/camera/start',{method:'POST',body:fd});
+  const j = await r.json().catch(()=>null);
+  if(!r.ok || j?.error){ alert('서버 카메라 시작 실패'); return; }
+  switchToServer();
+};
+serverStop.onclick = async ()=>{ await fetch('/camera/stop',{method:'POST'}); };
+
+// 통계 폴링
+function startCountsPoll(){
+  if(countsTimer) clearInterval(countsTimer);
+  countsTimer = setInterval(async ()=>{
+    const r = await fetch('/counts/live'); const j = await r.json().catch(()=>null);
+    if(j) renderCounts(j.counts||{});
+  }, 500);
+}
+startCountsPoll();
+
+// 초기 장치 목록
+if(navigator.mediaDevices?.enumerateDevices){
+  navigator.mediaDevices.getUserMedia({video:true,audio:false})
+    .then(s=>{s.getTracks().forEach(t=>t.stop()); return listCams();})
+    .catch(()=>{});
+}
+showPlaceholder(); renderCounts({});
+document.getElementById('apply').click();
+</script>
+</body></html>
